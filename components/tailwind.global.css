@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.flex-flow-y {
+    @apply flex flex-col overflow-y-hidden;
+}
+
+.flex-flow-x {
+    @apply flex flex-row overflow-x-hidden;
+}
+
+
+/* control max size */
+.window-dialog {
+    @apply mx-auto w-full max-w-screen-md h-full max-h-full overflow-hidden flex;
+}
+
+.window-content {
+    @apply w-full rounded-lg;
+
+}
+
+/* a fixed width */
+.window-aside {
+    @apply flex-none bg-[#f6f6f6] border-r border-r-[#dedede];
+}
+
+/* grow */
+.window-main {
+    @apply flex-1 overflow-hidden;
+}
+
+.window-header, .window-footer {
+    @apply flex items-center justify-center p-2 bg-[#fefefe];
+}
+
+.window-header {
+    @apply border-b border-b-[#ececec];
+}
+
+.window-footer {
+    @apply border-t border-t-[#ececec];
+}
+
+.window-body {
+    @apply h-full flex flex-col bg-[#efefef];
+}
+
+.window-footer {
+    display: flex;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.window-title {
+    @apply font-semibold text-[#646464];
+}
+
+.window-title h1 {
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}

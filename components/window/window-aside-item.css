@@ -1,0 +1,17 @@
+:host {
+    @apply px-4 py-2 flex gap-2 items-center;
+}
+
+:host(:hover),
+:host([active]) {
+    @apply bg-[#eee];
+    box-shadow: inset 0px 1px 0 0px #dedede, inset 0px -1px 0 0px #dedede;
+}
+
+::slotted([slot="icon"]) {
+    @apply w-5 h-5;
+}
+
+::slotted(*) {
+    @apply text-sm text-[#646464];
+}

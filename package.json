@@ -1,11 +1,14 @@
 {
   "scripts": {
-    "start": "wds --node-resolve --open --watch"
+    "dev": "vite dev --host"
   },
   "dependencies": {
     "lit": "^2.7.2"
   },
   "devDependencies": {
-    "@web/dev-server": "^0.1.38"
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.3.1",
+    "vite": "^4.2.1"
   }
 }
