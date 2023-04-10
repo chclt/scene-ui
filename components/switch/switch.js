@@ -127,7 +127,7 @@ export class SceneSwitch extends LitElement {
                 </div>
             </div>
 
-            <span class="scene-switch-label">${ this.label }</span>
+            ${ this.label && html`<span class="scene-switch-label">${ this.label }</span>` }
       `;
     }
 

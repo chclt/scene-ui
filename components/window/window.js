@@ -95,14 +95,13 @@ export class SceneWindow extends LitElement {
     }
 
     clickHandler(e) {
-        switch (e.target.tagName) {
-            case 'SCENE-WINDOW-ASIDE-ITEM':
-                this.path = e.target.getAttribute('href');
+        let target;
+        switch (true) {
+            case (target  = e.target.closest('scene-window-aside-item')) !== null:
+                this.path = target.getAttribute('href');
                 break;
-            case 'SCENE-WINDOW-LINK':
-                this.path = e.target.getAttribute('href');
-                break;
-            default:
+            case (target  = e.target.closest('scene-window-link')) !== null:
+                this.path = target.getAttribute('href');
                 break;
         }
     }

@@ -13,7 +13,7 @@
 
 /* control max size */
 .window-dialog {
-    @apply mx-auto w-full max-w-screen-md h-full max-h-full overflow-hidden flex;
+    @apply mx-auto w-full h-full max-h-full overflow-hidden flex;
 }
 
 .window-content {
