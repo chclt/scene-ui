@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scene UI</title>
+    
+    
+  <script type="module" crossorigin src="/scene-ui.js"></script>
+  <link rel="stylesheet" href="/scene-ui.css">
+</head>
+
+<body>
+    <!-- SVG Filter -->
+    <svg width="0" height="0" style="position: absolute; top: 0; left: -100vh;">
+        <filter id="scene-icon-stroke">
+            <feOffset dx="0" dy="0" />
+            <feGaussianBlur stdDeviation="1" result="offset-blur" />
+            <feComposite operator="out" in="SourceGraphic" in2="offset-blur" result="inverse" />
+            <feFlood flood-color="black" flood-opacity="0.2" result="color" />
+            <feComposite operator="in" in="color" in2="inverse" result="shadow" />
+            <feComposite operator="over" in="shadow" in2="SourceGraphic" />
+        </filter>
+    </svg>
+
+    <h1>Scene UI</h1>
+
+    <h2>Components</h2>
+    <h3>Switch</h3>
+    <scene-switch label="unchecked switch"></scene-switch>
+    <scene-switch label="checked switch" checked></scene-switch>
+    
+    <h3>Window</h3>
+    <div class="relative p-8 bg-[#ddd]">
+        <scene-window title="Window Title" path="/a" class="h-96">
+
+            <button type="button" slot="window-header-right" class="box-content p-2 w-6 h-6 scene-icon-btn">
+                <svg class="icon glyph fill-[#adadad]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="cross-circle" width="24" height="24"><path d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm3.71,12.29a1,1,0,0,1,0,1.42,1,1,0,0,1-1.42,0L12,13.42,9.71,15.71a1,1,0,0,1-1.42,0,1,1,0,0,1,0-1.42L10.58,12,8.29,9.71A1,1,0,0,1,9.71,8.29L12,10.58l2.29-2.29a1,1,0,0,1,1.42,1.42L13.42,12Z"></path></svg>
+            </button>
+            
+            <scene-window-aside-item active href="/a" slot="aside">
+                <svg slot="icon" class="fill-[#adadad] filter-[url('#scene-icon-stroke')] icon glyph" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="moon-alt-4" width="24" height="24"><circle cx="12" cy="12" r="10"></circle></svg>
+                <span>A</span>
+            </scene-window-aside-item>
+
+            <scene-window-aside-item href="/b" slot="aside">
+                <svg slot="icon" class="fill-[#adadad] filter-[url('#scene-icon-stroke')] icon glyph" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="moon-alt-4" width="24" height="24"><circle cx="12" cy="12" r="10"></circle></svg>
+                <span>B</span>
+            </scene-window-aside-item>
+
+            <div class="h-4 flex-shrink-0" slot="aside"></div>
+
+            <scene-window-aside-item href="/c" slot="aside">
+                <svg slot="icon" class="fill-[#adadad] filter-[url('#scene-icon-stroke')] icon glyph" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="moon-alt-4" width="24" height="24"><circle cx="12" cy="12" r="10"></circle></svg>
+                <span>C</span>
+            </scene-window-aside-item>
+
+            <scene-window-aside-item href="/d" slot="aside">
+                <svg slot="icon" class="fill-[#adadad] filter-[url('#scene-icon-stroke')] icon glyph" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="moon-alt-4" width="24" height="24"><circle cx="12" cy="12" r="10"></circle></svg>
+                <span>D</span>
+            </scene-window-aside-item>
+
+            <div class="flex-grow" slot="aside"></div>
+            <div class="h-4 flex-shrink-0" slot="aside"></div>
+
+            <scene-window-aside-item href="/e" slot="aside">
+                <svg slot="icon" class="fill-[#adadad] filter-[url('#scene-icon-stroke')] icon glyph" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="moon-alt-4" width="24" height="24"><circle cx="12" cy="12" r="10"></circle></svg>
+                <span>E</span>
+            </scene-window-aside-item>
+
+            <scene-window-aside-item href="/f" slot="aside">
+                <svg slot="icon" class="fill-[#adadad] filter-[url('#scene-icon-stroke')] icon glyph" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="moon-alt-4" width="24" height="24"><circle cx="12" cy="12" r="10"></circle></svg>
+                <span>F</span>
+            </scene-window-aside-item>
+
+
+            <scene-window-page title="Page A" slot="/a">
+                Page A<br>
+                link → <scene-window-link href="/a/z">/a/z</scene-window-link> ←
+                Page A<br> Page A<br> Page A<br> Page A<br> Page A<br> Page A<br> Page A<br> Page A<br> Page A<br> Page A<br> Page A<br> Page A<br> Page A<br> Page A<br> Page A<br> Page A<br> Page A<br>
+
+            </scene-window-page>
+
+            <scene-window-page title="Page A/Z" slot="/a/z">
+                Page A/Z<br>
+                link → <scene-window-link href="/a/z/y">/a/z/y</scene-window-link> ←
+            </scene-window-page>
+
+            <scene-window-page title="Page A/Z/Y" slot="/a/z/y">
+                Page A/Z/Y<br>
+            </scene-window-page>
+
+            <scene-window-page title="Page B" slot="/b">
+                Page B<br> Page B<br> Page B<br> Page B<br> Page B<br> Page B<br> Page B<br> Page B<br> Page B<br> Page B<br> Page B<br> Page B<br> Page B<br> Page B<br> Page B<br> Page B<br> Page B<br>
+            </scene-window-page>
+        </scene-window>
+
+    </div>
+
+
+
+</body>
+</html>
