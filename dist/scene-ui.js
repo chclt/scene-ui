@@ -226,7 +226,7 @@ var bt=Object.defineProperty;var mt=(r,t,e)=>t in r?bt(r,t,{enumerable:!0,config
                 骄傲的底部
             </div>
             -->
-        `}back(){this.dispatchEvent(new CustomEvent("scenewindowback",{bubbles:!0,composed:!0}))}}u(Y,"styles",[f(N),f(Mt)]),u(Y,"properties",{path:{type:String,reflect:!0}});customElements.define("scene-window-main",Y);const Rt=`:host{display:flex;height:100%;width:100%;flex-shrink:0;flex-grow:1;flex-direction:column;gap:1rem;overflow-y:auto;padding:3.5rem 1rem 1rem}
+        `}back(){this.dispatchEvent(new CustomEvent("scenewindowback",{bubbles:!0,composed:!0}))}}u(Y,"styles",[f(N),f(Mt)]),u(Y,"properties",{path:{type:String,reflect:!0}});customElements.define("scene-window-main",Y);const Rt=`:host{width:100%;overflow:auto;padding-top:2.5rem}
 `;class G extends v{constructor(){super(),this.title="Page Title"}render(){return g`
             <slot></slot>
         `}}u(G,"styles",[f(N),f(Rt)]),u(G,"properties",{title:{type:String}});customElements.define("scene-window-page",G);
