@@ -1,5 +1,5 @@
 :host {
-    @apply px-4 py-2 flex gap-2 items-center;
+    @apply px-4 py-2 flex gap-2 items-center leading-none;
 }
 
 :host(:hover),
