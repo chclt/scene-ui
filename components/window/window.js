@@ -109,5 +109,26 @@ export class SceneWindow extends LitElement {
     backHandler(e) {
         this.path = this.path.substring(0, this.path.lastIndexOf('/'));
     }
+
+    path_goto(relativePath) {
+        let currentPath = this.path;
+        if (!currentPath.endsWith('/'))  currentPath += '/';
+        if (!currentPath.startsWith('/')) currentPath = '/' + currentPath;
+        let absolutePath = new URL(relativePath, 'file://' + currentPath).pathname;
+        this.path = absolutePath;
+    }
+
+    page_add(element, relativePath, title = '') {
+        let currentPath = this.path;
+        if (!currentPath.endsWith('/'))  currentPath += '/';
+        if (!currentPath.startsWith('/')) currentPath = '/' + currentPath;
+        let absolutePath = new URL(relativePath, 'file://' + currentPath).pathname;
+
+        let newPage = document.createElement('scene-window-page');
+        newPage.setAttribute('slot', absolutePath);
+        newPage.setAttribute('title', title);
+        newPage.appendChild(element);
+        this.appendChild(newPage);
+    }
 }
 customElements.define('scene-window', SceneWindow);
