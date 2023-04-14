@@ -110,25 +110,37 @@ export class SceneWindow extends LitElement {
         this.path = this.path.substring(0, this.path.lastIndexOf('/'));
     }
 
-    path_goto(relativePath) {
+    path_getAbsolutePath(relativePath) {
         let currentPath = this.path;
         if (!currentPath.endsWith('/'))  currentPath += '/';
         if (!currentPath.startsWith('/')) currentPath = '/' + currentPath;
         let absolutePath = new URL(relativePath, 'file://' + currentPath).pathname;
-        this.path = absolutePath;
+        return absolutePath;
+    }
+
+    path_goto(relativePath) {
+        this.path = this.path_getAbsolutePath(relativePath);
+    }
+
+    path_exists(relativePath) {
+        let absolutePath = this.path_getAbsolutePath(relativePath);
+        let page = this.querySelector(`[slot="${absolutePath}"]`);
+        return page !== null;
+    }
+
+    page_exists(relativePath) {
+        return this.path_exists(relativePath);
     }
 
     page_add(element, relativePath, title = '') {
-        let currentPath = this.path;
-        if (!currentPath.endsWith('/'))  currentPath += '/';
-        if (!currentPath.startsWith('/')) currentPath = '/' + currentPath;
-        let absolutePath = new URL(relativePath, 'file://' + currentPath).pathname;
+        let absolutePath = this.path_getAbsolutePath(relativePath);
 
         let newPage = document.createElement('scene-window-page');
         newPage.setAttribute('slot', absolutePath);
         newPage.setAttribute('title', title);
         newPage.appendChild(element);
         this.appendChild(newPage);
+        return newPage;
     }
 }
 customElements.define('scene-window', SceneWindow);
