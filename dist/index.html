@@ -8,6 +8,7 @@
     <title>Scene UI</title>
     
     
+    
   <script type="module" crossorigin src="/scene-ui.js"></script>
   <link rel="stylesheet" href="/scene-ui.css">
 </head>
@@ -31,9 +32,32 @@
     <h3>Switch</h3>
     <scene-switch label="unchecked switch"></scene-switch>
     <scene-switch label="checked switch" checked></scene-switch>
-
     <input type="checkbox" class="scene-ui" name="" id="">
     
+    <h3>Toast</h3>
+    <button id="toast-new">New Toast</button>
+    <script>
+        document.querySelector('#toast-new').addEventListener('click', (event) => {
+            // let newToast = document.createElement('scene-toast');
+            // newToast.setAttribute('text', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.' + Math.random());
+            // event.target.insertAdjacentElement('beforeBegin', newToast);
+
+            event.target.dispatchEvent(new CustomEvent('scenetoast', {
+                bubbles: true,
+                composed: true,
+                detail: {
+                    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.' + Math.random()
+                },
+            }));
+        });
+    </script>
+    <scene-toast text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."></scene-toast>
+    <!-- <div class="fixed bottom-0 left-0 right-0 m-auto p-8 z-50 w-fit">
+        <div class="max-w-xs px-6 py-3 font-medium text-[#996B3D] rounded-xl border border-solid border-[#BD9A76]" style="background-image: var(--scene-amber); box-shadow: 0px 0px 8px 0px #BD9A7633; text-wrap: balance;">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. 
+        </div>
+    </div> -->
+
     <h3>Window</h3>
     <div class="relative p-8 bg-[#ddd]">
         <scene-window title="Window Title" path="/a" class="h-96">

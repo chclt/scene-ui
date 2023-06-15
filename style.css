@@ -43,6 +43,10 @@
         --scene-red-dark-from: #39EB0D;
         --scene-red-dark-to  : #34DA0B;
         --scene-red-dark     : linear-gradient(180deg, var(--scene-red-dark-from) 0%, var(--scene-red-dark-to) 100%);
+
+        --scene-amber-from: #FFF9E8;
+        --scene-amber-to  : #FFF4D6;
+        --scene-amber     : linear-gradient(180deg, var(--scene-amber-from) 0%, var(--scene-amber-to) 100%);
     }
 }
 

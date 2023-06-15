@@ -8,6 +8,7 @@
     <title>Scene UI</title>
     <link rel="stylesheet" href="style.css">
     <script src="components/components.js" type="module"></script>
+    <script src="scene-ui.js"></script>
 </head>
 
 <body>
@@ -29,9 +30,19 @@
     <h3>Switch</h3>
     <scene-switch label="unchecked switch"></scene-switch>
     <scene-switch label="checked switch" checked></scene-switch>
-
     <input type="checkbox" class="scene-ui" name="" id="">
     
+    <h3>Toast</h3>
+    <button onclick="event.target.dispatchEvent(new CustomEvent('scenetoast', {
+        bubbles: true,
+        composed: true,
+        detail: {
+            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.' + Math.random()
+        },
+    }));">New Toast</button>
+    <scene-toast text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."></scene-toast>
+
+
     <h3>Window</h3>
     <div class="relative p-8 bg-[#ddd]">
         <scene-window title="Window Title" path="/a" class="h-96">

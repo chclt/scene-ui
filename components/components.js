@@ -1,6 +1,9 @@
 import { SceneSwitch } from './switch/switch.js';
 export { SceneSwitch };
 
+import { SceneToast } from './toast/toast.js';
+export { SceneToast };
+
 import { SceneWindow } from './window/window.js';
 export { SceneWindow };
 
