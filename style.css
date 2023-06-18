@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @layer base {
+    /* from is the light color, and to is the deep color */
     :root {
         --scene-rose-from: #E3635B;
         --scene-rose-to  : #E45F55;
@@ -36,12 +37,12 @@
         --scene-green-dark-to  : #34DA0B;
         --scene-green-dark     : linear-gradient(180deg, var(--scene-green-dark-from) 0%, var(--scene-green-dark-to) 100%);
 
-        --scene-red-from: #64FB3F;
-        --scene-red-to  : #4FE929;
+        --scene-red-from: #E53C3C;
+        --scene-red-to  : #DE1D1D;
         --scene-red     : linear-gradient(180deg, var(--scene-red-from) 0%, var(--scene-red-to) 100%);
 
-        --scene-red-dark-from: #39EB0D;
-        --scene-red-dark-to  : #34DA0B;
+        --scene-red-dark-from: #CC0101;
+        --scene-red-dark-to  : #BB0000;
         --scene-red-dark     : linear-gradient(180deg, var(--scene-red-dark-from) 0%, var(--scene-red-dark-to) 100%);
 
         --scene-amber-from: #FFF9E8;
