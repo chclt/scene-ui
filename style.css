@@ -51,6 +51,96 @@
     }
 }
 
+@layer components {
+    .bg-scene-rose {
+        background-image: var(--scene-rose);
+    }
+
+    .bg-scene-rose-dark {
+        background-image: var(--scene-rose-dark);
+    }
+
+    .bg-scene-rose-darker {
+        background-image: var(--scene-rose-darker);
+    }
+
+    .bg-scene-rose-darkest {
+        background-image: var(--scene-rose-darkest);
+    }
+
+    .bg-scene-neutral {
+        background-image: var(--scene-neutral);
+    }
+
+    .bg-scene-neutral-dark {
+        background-image: var(--scene-neutral-dark);
+    }
+
+    .bg-scene-green {
+        background-image: var(--scene-green);
+    }
+
+    .bg-scene-green-dark {
+        background-image: var(--scene-green-dark);
+    }
+
+    .bg-scene-red {
+        background-image: var(--scene-red);
+    }
+
+    .bg-scene-red-dark {
+        background-image: var(--scene-red-dark);
+    }
+
+    .bg-scene-amber {
+        background-image: var(--scene-amber);
+    }
+
+    .border-scene-rose {
+        border-color: var(--scene-rose-from);
+    }
+
+    .border-scene-rose-dark {
+        border-color: var(--scene-rose-dark-from);
+    }
+
+    .border-scene-rose-darker {
+        border-color: var(--scene-rose-darker-from);
+    }
+
+    .border-scene-rose-darkest {
+        border-color: var(--scene-rose-darkest-from);
+    }
+
+    .border-scene-neutral {
+        border-color: var(--scene-neutral-from);
+    }
+
+    .border-scene-neutral-dark {
+        border-color: var(--scene-neutral-dark-from);
+    }
+
+    .border-scene-green {
+        border-color: var(--scene-green-from);
+    }
+
+    .border-scene-green-dark {
+        border-color: var(--scene-green-dark-from);
+    }
+
+    .border-scene-red {
+        border-color: var(--scene-red-from);
+    }
+
+    .border-scene-red-dark {
+        border-color: var(--scene-red-dark-from);
+    }
+
+    .border-scene-amber {
+        border-color: var(--scene-amber-from);
+    }
+}
+
 h1 {
     @apply text-2xl font-bold;
 }
