@@ -139,6 +139,50 @@
     .border-scene-amber {
         border-color: var(--scene-amber-from);
     }
+
+    .outline-scene-rose {
+        outline-color: var(--scene-rose-from);
+    }
+
+    .outline-scene-rose-dark {
+        outline-color: var(--scene-rose-dark-from);
+    }
+
+    .outline-scene-rose-darker {
+        outline-color: var(--scene-rose-darker-from);
+    }
+
+    .outline-scene-rose-darkest {
+        outline-color: var(--scene-rose-darkest-from);
+    }
+
+    .outline-scene-neutral {
+        outline-color: var(--scene-neutral-from);
+    }
+
+    .outline-scene-neutral-dark {
+        outline-color: var(--scene-neutral-dark-from);
+    }
+
+    .outline-scene-green {
+        outline-color: var(--scene-green-from);
+    }
+
+    .outline-scene-green-dark {
+        outline-color: var(--scene-green-dark-from);
+    }
+
+    .outline-scene-red {
+        outline-color: var(--scene-red-from);
+    }
+
+    .outline-scene-red-dark {
+        outline-color: var(--scene-red-dark-from);
+    }
+
+    .outline-scene-amber {
+        outline-color: var(--scene-amber-from);
+    }
 }
 
 h1 {

@@ -15,7 +15,7 @@
 
 <body>
     <!-- SVG Filter -->
-    <svg width="0" height="0" style="position: absolute; top: 0; left: -100vh;">
+    <svg width="0" height="0" style="position: absolute; top: 0; left: -100vh;" aria-hidden="true">
         <filter id="scene-icon-stroke">
             <feOffset dx="0" dy="0" />
             <feGaussianBlur stdDeviation="1" result="offset-blur" />
@@ -36,6 +36,8 @@
         <h4>rose</h4>
         <div class="w-8 h-8 bg-scene-rose"></div>
         <div class="w-8 h-8 border-solid border-2 border-scene-rose"></div>
+        <div class="w-8 h-8 outline outline-offset-2 outline-2 outline-scene-rose"></div>
+
     </li>
     
     <li class="inline-block">
