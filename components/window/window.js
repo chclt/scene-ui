@@ -10,13 +10,13 @@ export class SceneWindow extends LitElement {
     ];
 
     static properties = {
-        title: { type: String },
+        caption: { type: String },
         path: { type: String, reflect: true },
     };
 
     constructor() {
         super();
-        this.title = "Scene Window";
+        this.caption = "Scene Window";
         this.path = "/";
 
         this.requestUpdate();
@@ -29,7 +29,7 @@ export class SceneWindow extends LitElement {
             return typeof node.getAttribute === 'function' && node.getAttribute('slot').indexOf('/') == 0
         }).map((el) => {
             return {
-                title: el.getAttribute('title'),
+                caption: el.getAttribute('caption'),
                 path: el.getAttribute('slot'),
             };
         });
@@ -40,8 +40,8 @@ export class SceneWindow extends LitElement {
             <div class="window-dialog">
                 <div class="window-content flex-flow-y">
                     <div class="window-header relative">
-                        <div class="window-title">
-                            <h1>${ this.title }</h1>
+                        <div class="window-caption">
+                            <h1>${ this.caption }</h1>
                         </div>
                         <!-- Window Header Buttons -->
                         <div class="absolute inset-0 flex items-center justify-end">
@@ -132,12 +132,12 @@ export class SceneWindow extends LitElement {
         return this.path_exists(relativePath);
     }
 
-    page_add(element, relativePath, title = '') {
+    page_add(element, relativePath, caption = '') {
         let absolutePath = this.path_getAbsolutePath(relativePath);
 
         let newPage = document.createElement('scene-window-page');
         newPage.setAttribute('slot', absolutePath);
-        newPage.setAttribute('title', title);
+        newPage.setAttribute('caption', caption);
         newPage.appendChild(element);
         this.appendChild(newPage);
         return newPage;

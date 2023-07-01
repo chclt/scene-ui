@@ -55,11 +55,11 @@
     justify-content: flex-end;
 }
 
-.window-title {
+.window-caption {
     @apply font-semibold text-[#646464];
 }
 
-.window-title h1 {
+.window-caption h1 {
     margin: 0;
     font-size: 0.875rem;
     line-height: 1.5;

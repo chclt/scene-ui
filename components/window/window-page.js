@@ -10,12 +10,12 @@ export class SceneWindowPage extends LitElement {
     ];
 
     static properties = {
-        title: { type: String },
+        caption: { type: String },
     };
 
     constructor() {
         super();
-        this.title = "Page Title";
+        this.caption = "Page Caption";
     }
 
     render() {

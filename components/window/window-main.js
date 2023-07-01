@@ -25,7 +25,7 @@ export class SceneWindowMain extends LitElement {
         }).map((el) => {
             el = el.assignedElements()[0];
             return {
-                title: el.title,
+                caption: el.caption,
                 path: el.slot,
             };
         });
@@ -37,14 +37,14 @@ export class SceneWindowMain extends LitElement {
                 <div class="relative window-body p-0 flex-grow overflow-y-auto overflow-x-hidden">
                     <header class="window-header absolute top-0 left-0 right-0 z-10">
                         <div class="w-full h-full relative">
-                            <!-- Titles -->
+                            <!-- Captions -->
                             <div class="relative w-full h-full overflow-x-hidden" style="-webkit-mask-image: linear-gradient(to right, transparent 2rem, #FFF 4rem, #FFF calc(100% - 4rem), transparent calc(100% - 2rem));">
                                 <div class="relative w-full h-full flex whitespace-nowrap transition-transform" style="transform: translateX(calc(-100% * var(--scene-window-page, 0)));">
                                     ${
                                         this.pageList.map((page) => {
                                             return html`
-                                                <div class="window-title shrink-0 relative w-full h-full grid place-items-center">
-                                                    <h3>${page.title}</h3>
+                                                <div class="window-caption shrink-0 relative w-full h-full grid place-items-center">
+                                                    <h3>${page.caption}</h3>
                                                 </div>
                                             `;
                                         })
