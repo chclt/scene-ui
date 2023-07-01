@@ -1,6 +1,3 @@
-import { SceneSwitch } from './switch/switch.js';
-export { SceneSwitch };
-
 import { SceneToast } from './toast/toast.js';
 export { SceneToast };
 
