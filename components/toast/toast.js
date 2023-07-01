@@ -11,6 +11,7 @@ export class SceneToast extends LitElement {
             padding: 2rem;
             width: fit-content;
             z-index: 50;
+            pointer-events: none;
         }
 
         .scene-toast {
@@ -25,9 +26,9 @@ export class SceneToast extends LitElement {
             
             background-image: var(--scene-amber);
             box-shadow: 0px 0px 8px 0px #BD9A7633;
-            
-            text-wrap: balance;
 
+            pointer-events: auto;
+            
             /*
             animation: fade 0.5s, fade 0.5s 2.5s forwards reverse;
             */
@@ -54,6 +55,15 @@ export class SceneToast extends LitElement {
     constructor() {
         super();
         this.label = '';
+    }
+
+    connectedCallback() {
+        super.connectedCallback();
+        let flag = false;
+        this.shadowRoot.addEventListener('animationend', (event) => {
+            if (flag) this.remove();
+            flag = true;
+        });
     }
 
     render() {
