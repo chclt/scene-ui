@@ -25,25 +25,25 @@
         --scene-neutral-to  : #E4E4E4;
         --scene-neutral     : linear-gradient(180deg, var(--scene-neutral-from) 0%, var(--scene-neutral-to) 100%);
 
-        --scene-neutral-dark-from: #DADADA;
-        --scene-neutral-dark-to  : #D4D4D4;
-        --scene-neutral-dark     : linear-gradient(180deg, var(--scene-neutral-dark-from) 0%, var(--scene-neutral-dark-to) 100%);
+        --scene-neutral-darker-from: #DADADA;
+        --scene-neutral-darker-to  : #D4D4D4;
+        --scene-neutral-darker     : linear-gradient(180deg, var(--scene-neutral-darker-from) 0%, var(--scene-neutral-darker-to) 100%);
 
         --scene-green-from: #64FB3F;
         --scene-green-to  : #4FE929;
         --scene-green     : linear-gradient(180deg, var(--scene-green-from) 0%, var(--scene-green-to) 100%);
 
-        --scene-green-dark-from: #39EB0D;
-        --scene-green-dark-to  : #34DA0B;
-        --scene-green-dark     : linear-gradient(180deg, var(--scene-green-dark-from) 0%, var(--scene-green-dark-to) 100%);
+        --scene-green-darker-from: #39EB0D;
+        --scene-green-darker-to  : #34DA0B;
+        --scene-green-darker     : linear-gradient(180deg, var(--scene-green-darker-from) 0%, var(--scene-green-darker-to) 100%);
 
         --scene-red-from: #E53C3C;
         --scene-red-to  : #DE1D1D;
         --scene-red     : linear-gradient(180deg, var(--scene-red-from) 0%, var(--scene-red-to) 100%);
 
-        --scene-red-dark-from: #CC0101;
-        --scene-red-dark-to  : #BB0000;
-        --scene-red-dark     : linear-gradient(180deg, var(--scene-red-dark-from) 0%, var(--scene-red-dark-to) 100%);
+        --scene-red-darker-from: #CC0101;
+        --scene-red-darker-to  : #BB0000;
+        --scene-red-darker     : linear-gradient(180deg, var(--scene-red-darker-from) 0%, var(--scene-red-darker-to) 100%);
 
         --scene-amber-from: #FFF9E8;
         --scene-amber-to  : #FFF4D6;
@@ -72,24 +72,24 @@
         background-image: var(--scene-neutral);
     }
 
-    .bg-scene-neutral-dark {
-        background-image: var(--scene-neutral-dark);
+    .bg-scene-neutral-darker {
+        background-image: var(--scene-neutral-darker);
     }
 
     .bg-scene-green {
         background-image: var(--scene-green);
     }
 
-    .bg-scene-green-dark {
-        background-image: var(--scene-green-dark);
+    .bg-scene-green-darker {
+        background-image: var(--scene-green-darker);
     }
 
     .bg-scene-red {
         background-image: var(--scene-red);
     }
 
-    .bg-scene-red-dark {
-        background-image: var(--scene-red-dark);
+    .bg-scene-red-darker {
+        background-image: var(--scene-red-darker);
     }
 
     .bg-scene-amber {
@@ -116,24 +116,24 @@
         border-color: var(--scene-neutral-from);
     }
 
-    .border-scene-neutral-dark {
-        border-color: var(--scene-neutral-dark-from);
+    .border-scene-neutral-darker {
+        border-color: var(--scene-neutral-darker-from);
     }
 
     .border-scene-green {
         border-color: var(--scene-green-from);
     }
 
-    .border-scene-green-dark {
-        border-color: var(--scene-green-dark-from);
+    .border-scene-green-darker {
+        border-color: var(--scene-green-darker-from);
     }
 
     .border-scene-red {
         border-color: var(--scene-red-from);
     }
 
-    .border-scene-red-dark {
-        border-color: var(--scene-red-dark-from);
+    .border-scene-red-darker {
+        border-color: var(--scene-red-darker-from);
     }
 
     .border-scene-amber {
@@ -160,24 +160,24 @@
         outline-color: var(--scene-neutral-from);
     }
 
-    .outline-scene-neutral-dark {
-        outline-color: var(--scene-neutral-dark-from);
+    .outline-scene-neutral-darker {
+        outline-color: var(--scene-neutral-darker-from);
     }
 
     .outline-scene-green {
         outline-color: var(--scene-green-from);
     }
 
-    .outline-scene-green-dark {
-        outline-color: var(--scene-green-dark-from);
+    .outline-scene-green-darker {
+        outline-color: var(--scene-green-darker-from);
     }
 
     .outline-scene-red {
         outline-color: var(--scene-red-from);
     }
 
-    .outline-scene-red-dark {
-        outline-color: var(--scene-red-dark-from);
+    .outline-scene-red-darker {
+        outline-color: var(--scene-red-darker-from);
     }
 
     .outline-scene-amber {
