@@ -55,7 +55,6 @@ export class SceneRaisin extends LitElement {
 
     constructor() {
         super();
-        this.label = '';
     }
 
     connectedCallback() {
