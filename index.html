@@ -142,6 +142,14 @@
     <scene-raisin text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."></scene-raisin>
 
     <div class="flex items-center">
+        <h3 class="text-xl font-semibold">Image</h3>
+        <span class="ml-2 px-1.5 py-0.5 text-sm bg-gradient-to-b from-[#d38be3] to-[#bd4cbf] text-white border border-[#bd4cbf] rounded-lg" title="Custom Elements">CE</span>
+    </div>
+
+    <scene-image class="w-48 h-48" src="https://picsum.photos/200/300" style="transition-duration: 1000ms; transition-timing-function: ease-in-out;"></scene-image>
+    <button onclick="document.querySelector('scene-image').setAttribute('src', document.querySelector('scene-image').getAttribute('src') == 'https://picsum.photos/200/300' ? 'https://picsum.photos/300/300' : 'https://picsum.photos/200/300');">change image</button>
+
+    <div class="flex items-center">
         <h3 class="text-xl font-semibold">Window</h3>
         <span class="ml-2 px-1.5 py-0.5 text-sm bg-gradient-to-b from-[#d38be3] to-[#bd4cbf] text-white border border-[#bd4cbf] rounded-lg" title="Custom Elements">CE</span>
     </div>

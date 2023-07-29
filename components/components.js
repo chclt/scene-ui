@@ -1,6 +1,9 @@
 import { SceneRaisin } from './raisin/raisin.js';
 export { SceneRaisin };
 
+import { SceneImage } from './image/image.js';
+export { SceneImage };
+
 import { SceneWindow } from './window/window.js';
 export { SceneWindow };
 
