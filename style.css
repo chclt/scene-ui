@@ -185,24 +185,12 @@
     }
 }
 
-h1 {
-    @apply text-2xl font-bold;
-}
-
-h2 {
-    @apply text-xl font-semibold;
-}
-
-h3 {
-    @apply text-lg font-medium;
-}
-
 .scene-icon-btn svg {
     width: 100%;
     height: 100%;
 }
 
-[type="checkbox"].scene-ui {
+[type="checkbox"].scene-switch {
     @apply w-10 h-6 rounded-full appearance-none;
 
     --scene-switch-bg: url("data:image/svg+xml,%3Csvg width='56' height='24' viewBox='0 0 56 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cg clip-path='url(%23c)'%3E %3Crect width='56' height='24' fill='url(%23a)'/%3E %3Crect x='8.5' y='7.5' width='3' height='9' rx='1.5' stroke='%2334DA0B'/%3E %3Cg filter='url(%23b)'%3E %3Ccircle cx='28' cy='12' r='10' fill='white'/%3E %3C/g%3E %3Ccircle cx='46' cy='12' r='3.5' stroke='%23D4D4D4'/%3E %3C/g%3E %3Cdefs%3E %3Cfilter id='b' x='14' y='-2' width='28' height='28' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E %3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E %3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E %3CfeOffset/%3E %3CfeGaussianBlur stdDeviation='2'/%3E %3CfeComposite in2='hardAlpha' operator='out'/%3E %3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0'/%3E %3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow_319_312'/%3E %3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow_319_312' result='shape'/%3E %3C/filter%3E %3ClinearGradient id='a' x1='28' y1='0' x2='28' y2='24' gradientUnits='userSpaceOnUse'%3E %3Cstop stop-color='%23808080' stop-opacity='0'/%3E %3Cstop offset='1' stop-opacity='0.1'/%3E %3C/linearGradient%3E %3CclipPath id='c'%3E %3Crect width='56' height='24' fill='white'/%3E %3C/clipPath%3E %3C/defs%3E %3C/svg%3E ");
@@ -218,7 +206,7 @@ h3 {
     transition-duration: 150ms;
 }
 
-[type="checkbox"]:checked.scene-ui {
+[type="checkbox"]:checked.scene-switch {
     background-color: var(--scene-green-from);
     background-position: left center;
 }

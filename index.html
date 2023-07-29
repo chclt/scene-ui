@@ -11,7 +11,7 @@
     <script src="scene-ui.js"></script>
 </head>
 
-<body>
+<body class="container mx-auto p-12">
     <!-- SVG Filter -->
     <svg width="0" height="0" style="position: absolute; top: 0; left: -100vh;" aria-hidden="true">
         <filter id="scene-icon-stroke">
@@ -24,9 +24,9 @@
         </filter>
     </svg>
 
-    <h1>Scene UI</h1>
+    <h1 class="text-3xl font-bold">Scene UI</h1>
 
-    <h2>Colors</h2>
+    <h2 class="text-2xl font-semibold">Colors</h2>
 
     <ul class="">
 
@@ -96,12 +96,42 @@
 </ul>
 
 
+    <h2 class="text-2xl font-semibold">Texture</h2>
+    <div class="flex gap-8 flex-wrap">
 
-    <h2>Components</h2>
-    <h3>Switch</h3>
-    <input type="checkbox" class="scene-ui" name="" id="">
+        
+        <div class="w-48 h-48 border-2 border-solid border-[#1d9bf080] rounded-3xl shadow-[0_2px_6px_#1d9bf080,0_1px_2px_#1d9bf080] hover:shadow-[0_4px_12px_#1d9bf080,0_2px_4px_#1d9bf080] transition-shadow" style="background: repeating-radial-gradient(circle at 50% 100%, transparent 0, rgb(255 255 255 / 5%) 8px), radial-gradient(100% 100% at center bottom, #56B9FB 10%, #1D9BF0 100%);"></div>
+        
+        <div class="w-48 h-48 border-2 border-solid border-neutral-500 rounded-3xl" style="background-image: linear-gradient(90deg, transparent 3px,rgb(0 0 0 / 1%) 3px, rgb(0 0 0 / 1%) 4px); background-size: 4px;"></div>
+        
+    </div>
+
+
+    <h2 class="text-2xl font-semibold">Components</h2>
+
+    <div class="flex items-center">
+        <h3 class="text-xl font-semibold">Switch</h3>
+        <span class="ml-2 px-1.5 py-0.5 text-sm bg-gradient-to-b from-[#6a93ed] to-[#4468ea] text-white border border-[#4468ea] rounded-lg">CSS</span>
+    </div>
+
+    <input type="checkbox" class="scene-switch" name="" id="">
     
-    <h3>Raisin</h3>
+    <div class="flex items-center">
+        <h3 class="text-xl font-semibold">Select</h3>
+        <span class="ml-2 px-1.5 py-0.5 text-sm bg-gradient-to-b from-[#6a93ed] to-[#4468ea] text-white border border-[#4468ea] rounded-lg">CSS</span>
+    </div>
+
+    <!-- <select class="scene-select" name="" id="">
+        <option value="" selected>Option 1</option>
+        <option value="">Option 2 Option 2</option>
+        <option value="">Option 3 Option 3 Option 3</option>
+    </select> -->
+
+    <div class="flex items-center">
+        <h3 class="text-xl font-semibold">Raisin</h3>
+        <span class="ml-2 px-1.5 py-0.5 text-sm bg-gradient-to-b from-[#d38be3] to-[#bd4cbf] text-white border border-[#bd4cbf] rounded-lg" title="Custom Elements">CE</span>
+    </div>
+
     <button onclick="event.target.dispatchEvent(new CustomEvent('sceneraisin', {
         bubbles: true,
         composed: true,
@@ -111,8 +141,11 @@
     }));">New Raisin</button>
     <scene-raisin text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."></scene-raisin>
 
+    <div class="flex items-center">
+        <h3 class="text-xl font-semibold">Window</h3>
+        <span class="ml-2 px-1.5 py-0.5 text-sm bg-gradient-to-b from-[#d38be3] to-[#bd4cbf] text-white border border-[#bd4cbf] rounded-lg" title="Custom Elements">CE</span>
+    </div>
 
-    <h3>Window</h3>
     <div class="relative p-8 bg-[#ddd]">
         <scene-window caption="Window Caption" path="/a" class="h-96">
 
