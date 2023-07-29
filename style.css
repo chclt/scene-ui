@@ -48,6 +48,14 @@
         --scene-amber-from: #FFF9E8;
         --scene-amber-to  : #FFF4D6;
         --scene-amber     : linear-gradient(180deg, var(--scene-amber-from) 0%, var(--scene-amber-to) 100%);
+
+        --scene-blue-from: #618BEC;
+        --scene-blue-to  : #3961DB;
+        --scene-blue     : linear-gradient(180deg, var(--scene-blue-from) 0%, var(--scene-blue-to) 100%);
+
+        --scene-blue-darker-from: #4971E7;
+        --scene-blue-darker-to  : #3961DB;
+        --scene-blue-darker     : linear-gradient(180deg, var(--scene-blue-darker-from) 0%, var(--scene-blue-darker-to) 100%);
     }
 }
 
@@ -96,6 +104,14 @@
         background-image: var(--scene-amber);
     }
 
+    .bg-scene-blue {
+        background-image: var(--scene-blue);
+    }
+
+    .bg-scene-blue-darker {
+        background-image: var(--scene-blue-darker);
+    }
+
     .border-scene-rose {
         border-color: var(--scene-rose-from);
     }
@@ -138,6 +154,14 @@
 
     .border-scene-amber {
         border-color: var(--scene-amber-from);
+    }
+
+    .border-scene-blue {
+        border-color: var(--scene-blue-from);
+    }
+
+    .border-scene-blue-darker {
+        border-color: var(--scene-blue-darker-from);
     }
 
     .outline-scene-rose {
@@ -183,12 +207,61 @@
     .outline-scene-amber {
         outline-color: var(--scene-amber-from);
     }
+
+    .outline-scene-blue {
+        outline-color: var(--scene-blue-from);
+    }
+
+    .outline-scene-blue-darker {
+        outline-color: var(--scene-blue-darker-from);
+    }
 }
 
 .scene-icon-btn svg {
     width: 100%;
     height: 100%;
 }
+
+.scene-button {
+    @apply px-6 py-2.5 text-white rounded-lg bg-scene-rose border-2 border-scene-rose-darker hover:shadow-[0_0_8px_#E3635B77] active:bg-scene-rose-dark active:border-scene-rose-darkest focus-visible:outline-[var(--scene-rose-from)] focus-visible:outline-offset-2 focus-visible:outline focus-visible:outline-2;
+    
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, box-shadow;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+.scene-button[disabled] {
+    @apply cursor-not-allowed text-[#878787] bg-scene-neutral border-scene-neutral-darker shadow-none;
+}
+
+.scene-button.scene-button-rose {
+    @apply bg-scene-rose border-scene-rose-darker hover:shadow-[0_0_8px_#E3635B88] active:bg-scene-rose-dark active:border-scene-rose-darkest focus-visible:outline-[var(--scene-rose-from)];
+}
+
+/*
+.scene-button.scene-button-neutral {
+    @apply bg-scene-neutral border-scene-neutral-darker hover:shadow-[0_0_8px_#E3E3E388] active:bg-scene-neutral-darker active:border-scene-neutral-darker focus-visible:outline-[var(--scene-neutral-from)];
+}
+*/
+
+.scene-button.scene-button-green {
+    @apply bg-scene-green border-scene-green-darker hover:shadow-[0_0_8px_#64FB3F88] active:bg-scene-green-darker active:border-scene-green-darker focus-visible:outline-[var(--scene-green-from)];
+}
+
+.scene-button.scene-button-red {
+    @apply bg-scene-red border-scene-red-darker hover:shadow-[0_0_8px_#E53C3C88] active:bg-scene-red-darker active:border-scene-red-darker focus-visible:outline-[var(--scene-red-from)];
+}
+
+.scene-button.scene-button-amber {
+    @apply bg-scene-amber border-scene-amber hover:shadow-[0_0_8px_#FFF9E888] active:bg-scene-amber active:border-scene-amber focus-visible:outline-[var(--scene-amber-from)];
+}
+
+.scene-button.scene-button-blue {
+    @apply bg-scene-blue border-scene-blue-darker hover:shadow-[0_0_8px_#618BEC88] active:bg-scene-blue-darker active:border-scene-blue-darker focus-visible:outline-[var(--scene-blue-from)];
+}
+
+
+
 
 [type="checkbox"].scene-switch {
     @apply w-10 h-6 rounded-full appearance-none;
