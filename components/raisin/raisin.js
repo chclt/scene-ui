@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit';
 
-export class SceneToast extends LitElement {
+export class SceneRaisin extends LitElement {
     static styles = css`
         :host {
             position: fixed;
@@ -14,7 +14,7 @@ export class SceneToast extends LitElement {
             pointer-events: none;
         }
 
-        .scene-toast {
+        .scene-raisin {
             padding: 0.75rem 1.5rem;
             max-width: 20rem;
 
@@ -27,6 +27,7 @@ export class SceneToast extends LitElement {
             background-image: var(--scene-amber);
             box-shadow: 0px 0px 8px 0px #BD9A7633;
 
+            text-align: center;
             pointer-events: auto;
             
             /*
@@ -68,11 +69,11 @@ export class SceneToast extends LitElement {
 
     render() {
         return html`
-                <div class="scene-toast">
+                <div class="scene-raisin">
                     ${ this.text}
                 </div>
       `;
     }
 
 }
-customElements.define('scene-toast', SceneToast);
+customElements.define('scene-raisin', SceneRaisin);
