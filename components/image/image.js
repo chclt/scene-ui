@@ -48,6 +48,7 @@ export class SceneImage extends LitElement {
     connectedCallback() {
         super.connectedCallback();
         this.shadowRoot.addEventListener('transitionend', (event) => {
+            if (event.target.classList.contains('no-transition')) return;
             this._oldSrc = this._newSrc;
             this._newSrc = '';
             this.shadowRoot.querySelector('.img-new').classList.add('no-transition');

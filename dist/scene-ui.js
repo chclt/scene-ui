@@ -66,7 +66,7 @@ var yt=Object.defineProperty;var xt=(o,t,e)=>t in o?yt(o,t,{enumerable:!0,config
             to { opacity: 1; filter: blur(0px); }
         }
 
-    `),u(Z,"properties",{text:{type:String}});customElements.define("scene-raisin",Z);class X extends f{constructor(){super(),this.imageInited=!1,this._oldSrc="",this._newSrc=""}connectedCallback(){super.connectedCallback(),this.shadowRoot.addEventListener("transitionend",t=>{this._oldSrc=this._newSrc,this._newSrc="",this.shadowRoot.querySelector(".img-new").classList.add("no-transition")})}attributeChangedCallback(t,e,i){t==="src"&&(this.imageInited?(this._newSrc=i,this.shadowRoot.querySelector(".img-new").classList.remove("no-transition")):(this._oldSrc=i,this.imageInited=!0))}render(){return m`
+    `),u(Z,"properties",{text:{type:String}});customElements.define("scene-raisin",Z);class X extends f{constructor(){super(),this.imageInited=!1,this._oldSrc="",this._newSrc=""}connectedCallback(){super.connectedCallback(),this.shadowRoot.addEventListener("transitionend",t=>{t.target.classList.contains("no-transition")||(this._oldSrc=this._newSrc,this._newSrc="",this.shadowRoot.querySelector(".img-new").classList.add("no-transition"))})}attributeChangedCallback(t,e,i){t==="src"&&(this.imageInited?(this._newSrc=i,this.shadowRoot.querySelector(".img-new").classList.remove("no-transition")):(this._oldSrc=i,this.imageInited=!0))}render(){return m`
             <div class="img-old" style="background-image: url('${this._oldSrc}');"></div>
             <div class="img-new no-transition" style="background-image: url('${this._newSrc}');"></div>
       `}}u(X,"styles",ft`
@@ -138,7 +138,7 @@ var yt=Object.defineProperty;var xt=(o,t,e)=>t in o?yt(o,t,{enumerable:!0,config
             <span class="whitespace-nowrap overflow-hidden">
                 <slot></slot>
             </span>
-        `}}u(J,"styles",[g(N),g(Rt)]),u(J,"properties",{href:{type:String},active:{type:Boolean,reflect:!0}});customElements.define("scene-window-aside-item",J);const Tt=`:host{display:inline;cursor:pointer;text-decoration-line:underline}
+        `}}u(J,"styles",[g(N),g(Rt)]),u(J,"properties",{href:{type:String},active:{type:Boolean,reflect:!0}});customElements.define("scene-window-aside-item",J);const Tt=`:host{display:inline-block;cursor:pointer;text-decoration-line:underline}
 `;class Y extends f{constructor(){super()}render(){return m`
             <slot></slot>
         `}}u(Y,"styles",[g(N),g(Tt)]),u(Y,"properties",{href:{type:String}});customElements.define("scene-window-link",Y);const Mt=`:host{display:flex;flex:1 1 0%;flex-direction:column;overflow:hidden;overflow-y:hidden}::slotted(*){flex-shrink:0}

@@ -14,18 +14,6 @@
 </head>
 
 <body class="container mx-auto p-12">
-    <!-- SVG Filter -->
-    <svg width="0" height="0" style="position: absolute; top: 0; left: -100vh;" aria-hidden="true">
-        <filter id="scene-icon-stroke">
-            <feOffset dx="0" dy="0" />
-            <feGaussianBlur stdDeviation="1" result="offset-blur" />
-            <feComposite operator="out" in="SourceGraphic" in2="offset-blur" result="inverse" />
-            <feFlood flood-color="black" flood-opacity="0.2" result="color" />
-            <feComposite operator="in" in="color" in2="inverse" result="shadow" />
-            <feComposite operator="over" in="shadow" in2="SourceGraphic" />
-        </filter>
-    </svg>
-
     <h1 class="text-3xl font-bold">Scene UI</h1>
 
     <h2 class="text-2xl font-semibold">Colors</h2>
@@ -117,6 +105,23 @@
         <div class="w-48 h-48 border-2 border-solid border-neutral-500 rounded-3xl" style="background-image: linear-gradient(90deg, transparent 3px,rgb(0 0 0 / 1%) 3px, rgb(0 0 0 / 1%) 4px); background-size: 4px;"></div>
         
     </div>
+
+
+    <h2 class="text-2xl font-semibold">SVG Filter</h2>
+
+    <!-- SVG Filter -->
+    <svg width="0" height="0" style="position: absolute; top: 0; left: -100vh;" aria-hidden="true">
+        <filter id="scene-icon-stroke">
+            <feOffset dx="0" dy="0" />
+            <feGaussianBlur stdDeviation="1" result="offset-blur" />
+            <feComposite operator="out" in="SourceGraphic" in2="offset-blur" result="inverse" />
+            <feFlood flood-color="black" flood-opacity="0.2" result="color" />
+            <feComposite operator="in" in="color" in2="inverse" result="shadow" />
+            <feComposite operator="over" in="shadow" in2="SourceGraphic" />
+        </filter>
+    </svg>
+
+    <p>look up in source code</p>
 
 
     <h2 class="text-2xl font-semibold">Components</h2>
