@@ -19,7 +19,6 @@ export class SceneRaisin extends LitElement {
             max-width: 20rem;
 
             color: #996B3D;
-            font-weight: 500;
             
             border: 1px solid #BD9A76;
             border-radius: 0.75rem;
@@ -69,7 +68,7 @@ export class SceneRaisin extends LitElement {
     render() {
         return html`
                 <div class="scene-raisin">
-                    ${ this.text}
+                    ${ this.text }
                 </div>
       `;
     }

@@ -38,7 +38,6 @@ var yt=Object.defineProperty;var xt=(o,t,e)=>t in o?yt(o,t,{enumerable:!0,config
             max-width: 20rem;
 
             color: #996B3D;
-            font-weight: 500;
             
             border: 1px solid #BD9A76;
             border-radius: 0.75rem;
