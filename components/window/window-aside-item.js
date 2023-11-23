@@ -1,11 +1,11 @@
-import TailwindStyles from '../tailwind.global.css?inline';
+import TailwindGlobalStyles from '../tailwind.global.css?inline';
 import { LitElement, html, unsafeCSS } from 'lit';
 
 import Style from "./window-aside-item.css?inline";
 
 export class SceneWindowAsideItem extends LitElement {
     static styles = [
-        unsafeCSS(TailwindStyles),
+        unsafeCSS(TailwindGlobalStyles),
         unsafeCSS(Style),
     ];
 
@@ -22,10 +22,10 @@ export class SceneWindowAsideItem extends LitElement {
 
     render() {
         return html`
-            <div class="w-5 h-5 flex-shrink-0">
+            <div class="window-aside-item-icon">
                 <slot name="icon"></slot>
             </div>
-            <span class="whitespace-nowrap overflow-hidden">
+            <span class="window-aside-item-label">
                 <slot></slot>
             </span>
         `;

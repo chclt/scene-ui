@@ -1,17 +1,34 @@
 :host {
-    @apply px-4 py-2 flex gap-2 items-center leading-none;
+    padding: 0.5rem 1rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    line-height: 1;
 }
 
 :host(:hover),
 :host([active]) {
-    @apply bg-[#eee];
+    background-color: #eee;
     box-shadow: inset 0px 1px 0 0px #dedede, inset 0px -1px 0 0px #dedede;
 }
 
 ::slotted([slot="icon"]) {
-    @apply w-5 h-5;
+    width: 1.25rem;
+    height: 1.25rem;
 }
 
 ::slotted(*) {
-    @apply text-sm text-[#646464];
+    font-size: 0.875rem;
+    color: #646464;
+}
+
+.window-aside-item-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+}
+
+.window-aside-item-label {
+    white-space: nowrap;
+    overflow: hidden;
 }

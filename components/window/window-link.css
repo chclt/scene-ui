@@ -1,3 +1,5 @@
 :host {
-    @apply inline-block underline cursor-pointer;
+    display: inline-block;
+    text-decoration: underline;
+    cursor: pointer;
 }

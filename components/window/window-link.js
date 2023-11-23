@@ -1,11 +1,11 @@
-import TailwindStyles from '../tailwind.global.css?inline';
+import TailwindGlobalStyles from '../tailwind.global.css?inline';
 import { LitElement, html, unsafeCSS } from 'lit';
 
 import Style from "./window-link.css?inline";
 
 export class SceneWindowLink extends LitElement {
     static styles = [
-        unsafeCSS(TailwindStyles),
+        unsafeCSS(TailwindGlobalStyles),
         unsafeCSS(Style),
     ];
 

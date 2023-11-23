@@ -1,11 +1,13 @@
-import TailwindStyles from '../tailwind.global.css?inline';
+import TailwindGlobalStyles from '../tailwind.global.css?inline';
+import WindowGlobalStyle from './window.global.css?inline';
 import { LitElement, html, unsafeCSS } from 'lit';
 
 import Style from "./window-main.css?inline";
 
 export class SceneWindowMain extends LitElement {
     static styles = [
-        unsafeCSS(TailwindStyles),
+        unsafeCSS(TailwindGlobalStyles),
+        unsafeCSS(WindowGlobalStyle),
         unsafeCSS(Style),
     ];
 
@@ -33,7 +35,7 @@ export class SceneWindowMain extends LitElement {
 
     render() {
         return html`
-            <div class="window-flow-y flex-grow max-h-full" style="--scene-window-page: ${ this.pageList.findIndex(page => page.path == this.path) };">
+            <div class="flex-grow max-h-full" style="--scene-window-page: ${ this.pageList.findIndex(page => page.path == this.path) };">
                 <div class="relative window-body p-0 flex-grow overflow-y-auto overflow-x-hidden">
                     <header class="window-header absolute top-0 left-0 right-0 z-10">
                         <div class="w-full h-full relative">
@@ -43,7 +45,7 @@ export class SceneWindowMain extends LitElement {
                                     ${
                                         this.pageList.map((page) => {
                                             return html`
-                                                <div class="window-caption shrink-0 relative w-full h-full grid place-items-center">
+                                                <div class="window-caption flex-shrink-0 relative w-full h-full grid place-items-center">
                                                     <h3>${page.caption}</h3>
                                                 </div>
                                             `;
@@ -60,13 +62,13 @@ export class SceneWindowMain extends LitElement {
                                         overflow: hidden;
                                         transition: transform 0.2s ease-in-out;
                                     ">
-                                        <svg class="w-full h-full fill-[#adadad] icon glyph" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="left-circle" width="24" height="24"><path d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm1.71,12.29a1,1,0,0,1,0,1.42,1,1,0,0,1-1.42,0l-3-3a1,1,0,0,1,0-1.42l3-3a1,1,0,0,1,1.42,1.42L11.41,12Z"></path></svg>
+                                        <svg class="w-full h-full fill-[#adadad]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="left-circle" width="24" height="24"><path d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm1.71,12.29a1,1,0,0,1,0,1.42,1,1,0,0,1-1.42,0l-3-3a1,1,0,0,1,0-1.42l3-3a1,1,0,0,1,1.42,1.42L11.41,12Z"></path></svg>
                                     </button>                                    
                                 </div>
 
                                 <!--
-                                <button type="button" class="btn-submit btn-icon" aria-label="Back">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="check-circle" class="icon glyph" width="24" height="24"><path d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm4.71,8.71-5,5a1,1,0,0,1-1.42,0l-3-3a1,1,0,1,1,1.42-1.42L11,13.59l4.29-4.3a1,1,0,0,1,1.42,1.42Z"></path></svg>
+                                <button type="button" class="" aria-label="Back">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="check-circle" class="" width="24" height="24"><path d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm4.71,8.71-5,5a1,1,0,0,1-1.42,0l-3-3a1,1,0,1,1,1.42-1.42L11,13.59l4.29-4.3a1,1,0,0,1,1.42,1.42Z"></path></svg>
                                 </button>
                                 -->
                             </div>   
@@ -86,7 +88,6 @@ export class SceneWindowMain extends LitElement {
 
             <!--
             <div class="window-footer">
-                骄傲的底部
             </div>
             -->
         `;

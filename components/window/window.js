@@ -1,11 +1,13 @@
-import TailwindStyles from '../tailwind.global.css?inline';
+import TailwindGlobalStyles from '../tailwind.global.css?inline';
+import WindowGlobalStyle from './window.global.css?inline';
 import { LitElement, html, unsafeCSS } from 'lit';
 
 import SceneWindowStyle from "./window.css?inline";
 
 export class SceneWindow extends LitElement {
     static styles = [
-        unsafeCSS(TailwindStyles),
+        unsafeCSS(TailwindGlobalStyles),
+        unsafeCSS(WindowGlobalStyle),
         unsafeCSS(SceneWindowStyle),
     ];
 
@@ -49,7 +51,7 @@ export class SceneWindow extends LitElement {
                         </div>
                     </div>
 
-                    <div class="flex-flow-x grow">
+                    <div class="flex-flow-x flex-grow">
 
                         <div class="window-aside w-32 flex flex-col py-4 overflow-y-auto">
                             <slot name="aside"></slot>

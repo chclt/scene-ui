@@ -1,3 +1,56 @@
 :host {
-    @apply block overflow-hidden;
+    display: block;
+    overflow: hidden;
+}
+
+.hidden {
+    display: none;
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.inset-0 {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.w-32 {
+    width: 8rem;
+}
+
+.overflow-y-auto {
+    overflow-y: auto;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.items-center {
+    align-items: center;
 }
