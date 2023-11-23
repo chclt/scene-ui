@@ -1,4 +1,5 @@
 import { LitElement, html, css } from 'lit';
+import { repeat } from 'lit/directives/repeat.js';
 
 export class SceneImage extends LitElement {
     static styles = css`
@@ -7,70 +8,79 @@ export class SceneImage extends LitElement {
             display: block;
         }
 
-        .img-old {
+        div, video {
             position: absolute;
-            inset: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            animation-name: fade-in;
+            animation-duration: inherit;
+            animation-timing-function: inherit;
+            animation-delay: inherit;
+        }
+        
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        div {
             background-size: inherit;
             background-position: inherit;
         }
 
-        .img-new {
-            position: absolute;
-            inset: 0;
-            background-size: inherit;
-            background-position: inherit;
-            opacity: 1;
-            transition-property: opacity;
-            transition-duration: inherit;
-            transition-timing-function: inherit;
-            transition-delay: inherit;
+        .no-animation {
+            animation: none;
         }
 
-        .no-transition {
-            transition: none;
-            opacity: 0;
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
     `;
 
     static properties = {
         src: { type: String },
-        _oldSrc: { type: String },
-        _newSrc: { type: String },
+        type: { type: String },
+        imageStack: { type: Array, attribute: false }, // [{ src: '', type: '', stackindex: 1 }]
+        imageStackLength: { type: Number, attribute: false },
     };
 
     constructor() {
         super();
-        this.imageInited = false;
-        this._oldSrc = '';
-        this._newSrc = '';
+        this.imageStack = [];
+        this.imageStackLength = 0;
     }
 
     connectedCallback() {
         super.connectedCallback();
-        this.shadowRoot.addEventListener('transitionend', (event) => {
-            if (event.target.classList.contains('no-transition')) return;
-            this._oldSrc = this._newSrc;
-            this._newSrc = '';
-            this.shadowRoot.querySelector('.img-new').classList.add('no-transition');
+
+        this.shadowRoot.addEventListener('animationend', (event) => {
+            this.imageStack.forEach(() => {
+                if (this.imageStack[0].stackindex < event.target.dataset.stackindex) this.imageStack.shift();
+            });
+            this.requestUpdate();
         });
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
         if (name !== 'src') return;
-        if (!this.imageInited) {
-            this._oldSrc = newValue;
-            this.imageInited = true;
-        } else {
-            this._newSrc = newValue;
-            this.shadowRoot.querySelector('.img-new').classList.remove('no-transition');
-        }
+        this.imageStack.push({ src: newValue, type: this.getAttribute('type') == 'video' ? 'video' : 'image', stackindex: ++this.imageStackLength });
+        this.requestUpdate()
     }
 
     render() {
-        return html`
-            <div class="img-old" style="background-image: url('${ this._oldSrc }');"></div>
-            <div class="img-new no-transition" style="background-image: url('${ this._newSrc }');"></div>
-      `;
+        return repeat(this.imageStack, (item) => item.stackindex, (item) =>
+            item.type == 'video' ? 
+            html`<video data-stackindex="${ item.stackindex }" class="${ item.stackindex == 1 ? 'no-animation' : '' }" src="${ item.src }" autoplay muted loop></video>` : 
+            html`<div data-stackindex="${ item.stackindex }" class="${ item.stackindex == 1 ? 'no-animation' : '' }" style="background-image: url('${ item.src }');"></div>`
+        );
     }
 
 }
