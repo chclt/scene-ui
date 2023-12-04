@@ -4,6 +4,9 @@ export { SceneRaisin };
 import { SceneImage } from './image/image.js';
 export { SceneImage };
 
+import { SceneLabel } from './label/label.js';
+export { SceneLabel };
+
 import { SceneWindow } from './window/window.js';
 export { SceneWindow };
 

@@ -179,6 +179,26 @@
     <scene-image class="w-48 h-48" src="https://picsum.photos/200/300" style="animation-duration: 1000ms; animation-timing-function: ease-in-out;"></scene-image>
     <button onclick="document.querySelector('scene-image').setAttribute('type', document.querySelector('scene-image').getAttribute('type') == 'video' ? 'image' : 'video'); document.querySelector('scene-image').setAttribute('src', document.querySelector('scene-image').getAttribute('src') == 'https://picsum.photos/200/300' ? 'https://applescreensaver.macify.workers.dev/Videos/g201_AK_A003_C014_SDR_20191113_SDR_2K_AVC.mov' : 'https://picsum.photos/200/300');">change image</button>
 
+
+    <div class="flex items-center">
+        <h3 class="text-xl font-semibold">Label</h3>
+        <span class="ml-2 px-1.5 py-0.5 text-sm bg-gradient-to-b from-[#d38be3] to-[#bd4cbf] text-white border border-[#bd4cbf] rounded-lg" title="Custom Elements">CE</span>
+    </div>
+    <scene-label label="720P" style="transition-duration: 1s;"></scene-label><br>
+    <button onclick="labelDemo();">change label</button>
+    <script>
+        let labelIndex = 1;
+        let labels = ['720P', 'HD', '4K', '8K'];
+        function labelDemo() {
+            document.querySelector('scene-label').setAttribute('label', labels[labelIndex]);
+            labelIndex++;
+            if (labelIndex >= labels.length) {
+                labelIndex = 0;
+            }
+        }
+    </script>
+
+
     <div class="flex items-center">
         <h3 class="text-xl font-semibold">Window</h3>
         <span class="ml-2 px-1.5 py-0.5 text-sm bg-gradient-to-b from-[#d38be3] to-[#bd4cbf] text-white border border-[#bd4cbf] rounded-lg" title="Custom Elements">CE</span>
