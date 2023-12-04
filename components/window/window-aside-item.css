@@ -3,7 +3,6 @@
     display: flex;
     gap: 0.5rem;
     align-items: center;
-    line-height: 1;
 }
 
 :host(:hover),
