@@ -8,6 +8,8 @@
     <title>Scene UI</title>
     
     
+    <script src="https://cdn.tailwindcss.com"></script>
+
   <script type="module" crossorigin src="/scene-ui.js"></script>
   <link rel="stylesheet" href="/scene-ui.css">
 </head>
@@ -22,76 +24,63 @@
     <li class="inline-block">
         <h4>rose</h4>
         <div class="w-8 h-8 bg-scene-rose"></div>
-        <div class="w-8 h-8 border-solid border-2 border-scene-rose"></div>
     </li>
     
     <li class="inline-block">
         <h4>rose-dark</h4>
         <div class="w-8 h-8 bg-scene-rose-dark"></div>
-        <div class="w-8 h-8 border-solid border-2 border-scene-rose-dark"></div>
     </li>
     
     <li class="inline-block">
         <h4>rose-darker</h4>
         <div class="w-8 h-8 bg-scene-rose-darker"></div>
-        <div class="w-8 h-8 border-solid border-2 border-scene-rose-darker"></div>
     </li>
     
     <li class="inline-block">
         <h4>rose-darkest</h4>
         <div class="w-8 h-8 bg-scene-rose-darkest"></div>
-        <div class="w-8 h-8 border-solid border-2 border-scene-rose-darkest"></div>
     </li>
     <br>
     <li class="inline-block">
         <h4>neutral</h4>
         <div class="w-8 h-8 bg-scene-neutral"></div>
-        <div class="w-8 h-8 border-solid border-2 border-scene-neutral"></div>
     </li>
     
     <li class="inline-block">
         <h4>neutral-darker</h4>
         <div class="w-8 h-8 bg-scene-neutral-darker"></div>
-        <div class="w-8 h-8 border-solid border-2 border-scene-neutral-darker"></div>
     </li>
     <br>
     <li class="inline-block">
         <h4>green</h4>
         <div class="w-8 h-8 bg-scene-green"></div>
-        <div class="w-8 h-8 border-solid border-2 border-scene-green"></div>
     </li>
     <li class="inline-block">
         <h4>green-darker</h4>
         <div class="w-8 h-8 bg-scene-green-darker"></div>
-        <div class="w-8 h-8 border-solid border-2 border-scene-green-darker"></div>
     </li>
     <br>
     <li class="inline-block">
         <h4>red</h4>
         <div class="w-8 h-8 bg-scene-red"></div>
-        <div class="w-8 h-8 border-solid border-2 border-scene-red"></div>
     </li>
     <li class="inline-block">
         <h4>red-darker</h4>
         <div class="w-8 h-8 bg-scene-red-darker"></div>
-        <div class="w-8 h-8 border-solid border-2 border-scene-red-darker"></div>
     </li>
     <br>
     <li class="inline-block">
         <h4>amber</h4>
         <div class="w-8 h-8 bg-scene-amber"></div>
-        <div class="w-8 h-8 border-solid border-2 border-scene-amber"></div>
     </li>
     <br>
     <li class="inline-block">
         <h4>blue</h4>
         <div class="w-8 h-8 bg-scene-blue"></div>
-        <div class="w-8 h-8 border-solid border-2 border-scene-blue"></div>
     </li>
     <li class="inline-block">
         <h4>blue-darker</h4>
         <div class="w-8 h-8 bg-scene-blue-darker"></div>
-        <div class="w-8 h-8 border-solid border-2 border-scene-blue-darker"></div>
 </ul>
 
 
@@ -134,7 +123,7 @@
     <button class="scene-button" disabled>Disabled</button>
     <br>
     <button class="scene-button scene-button-rose">rose</button>
-    <!-- <button class="scene-button scene-button-neutral">neutral</button> -->
+    <button class="scene-button scene-button-neutral">neutral</button>
     <button class="scene-button scene-button-green">green</button>
     <button class="scene-button scene-button-red">red</button>
     <button class="scene-button scene-button-amber">amber</button>
@@ -180,6 +169,38 @@
 
     <scene-image class="w-48 h-48" src="https://picsum.photos/200/300" style="animation-duration: 1000ms; animation-timing-function: ease-in-out;"></scene-image>
     <button onclick="document.querySelector('scene-image').setAttribute('type', document.querySelector('scene-image').getAttribute('type') == 'video' ? 'image' : 'video'); document.querySelector('scene-image').setAttribute('src', document.querySelector('scene-image').getAttribute('src') == 'https://picsum.photos/200/300' ? 'https://applescreensaver.macify.workers.dev/Videos/g201_AK_A003_C014_SDR_20191113_SDR_2K_AVC.mov' : 'https://picsum.photos/200/300');">change image</button>
+
+
+    <div class="flex items-center">
+        <h3 class="text-xl font-semibold">Label</h3>
+        <span class="ml-2 px-1.5 py-0.5 text-sm bg-gradient-to-b from-[#d38be3] to-[#bd4cbf] text-white border border-[#bd4cbf] rounded-lg" title="Custom Elements">CE</span>
+    </div>
+    <scene-label label="720P" style="transition-duration: 1s;"></scene-label><br>
+    <button onclick="labelDemo();">change label</button>
+    <script>
+        let labelIndex = 1;
+        let labels = ['720P', 'HD', '4K', '8K'];
+        function labelDemo() {
+            document.querySelector('scene-label').setAttribute('label', labels[labelIndex]);
+            labelIndex++;
+            if (labelIndex >= labels.length) {
+                labelIndex = 0;
+            }
+        }
+    </script>
+
+    <div class="flex items-center">
+        <h3 class="text-xl font-semibold">input</h3>
+        <span class="ml-2 px-1.5 py-0.5 text-sm bg-scene-blue text-white border border-scene-blue-darker rounded-lg">CSS</span>
+    </div>
+
+    <input type="text" class="scene-input" name="" id="">
+
+    <div class="flex">
+        <input type="text" class="scene-input rounded-r-none" placeholder="Placeholder" name="" id="">
+        <input type="submit" class="scene-button scene-button-green rounded-l-none">
+
+    </div>
 
     <div class="flex items-center">
         <h3 class="text-xl font-semibold">Window</h3>
@@ -231,7 +252,9 @@
 
             <scene-window-page caption="Page A" slot="/a">
                 Page A<br>
-                link → <scene-window-link href="/a/z">/a/z</scene-window-link> ←
+                link → <scene-window-link href="/a/z">/a/z</scene-window-link> ←<br>
+                link → <scene-window-link href="/a/z/y">/a/z/y</scene-window-link> ←<br>
+                link → <scene-window-link href="/a/i">/a/i</scene-window-link> ←<br>
                 Page A<br> Page A<br> Page A<br> Page A<br> Page A<br> Page A<br> Page A<br> Page A<br> Page A<br> Page A<br> Page A<br> Page A<br> Page A<br> Page A<br> Page A<br> Page A<br> Page A<br>
 
             </scene-window-page>
@@ -239,6 +262,10 @@
             <scene-window-page caption="Page A/Z" slot="/a/z">
                 Page A/Z<br>
                 link → <scene-window-link href="/a/z/y">/a/z/y</scene-window-link> ←
+            </scene-window-page>
+
+            <scene-window-page caption="Page A/I" slot="/a/i">
+                Page A/I<br>
             </scene-window-page>
 
             <scene-window-page caption="Page A/Z/Y" slot="/a/z/y">
