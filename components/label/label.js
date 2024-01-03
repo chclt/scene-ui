@@ -15,11 +15,10 @@ export class SceneLabel extends LitElement {
             left: 0;
             white-space: nowrap;
             transform-origin: left;
-
             transition-duration: 0.3s;
-            transition-function: ease-out;
+            transition-function: ease-in-out;
             transition-property: transform, opacity, filter;
-            animation: appear 0.5s ease-out;
+            animation: appear 0.5s ease-in-out;
         }
 
         .no-animation {
