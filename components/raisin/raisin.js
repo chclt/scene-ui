@@ -23,7 +23,7 @@ export class SceneRaisin extends LitElement {
             border: 1px solid #BD9A76;
             border-radius: 0.75rem;
             
-            background-image: var(--scene-amber);
+            background-color: var(--scene-amber);
             box-shadow: 0px 0px 8px 0px #BD9A7633;
 
             text-align: center;
@@ -33,7 +33,7 @@ export class SceneRaisin extends LitElement {
             animation: fade 0.5s, fade 0.5s 2.5s forwards reverse;
             */
 
-            animation: blurFade 0.2s ease-in-out, blurFade 0.2s 2.8s forwards reverse ease-in-out;
+            animation: blurFade 0.2s ease-in-out, blurFade 0.2s 3.2s forwards reverse ease-in-out;
         }
 
         @keyframes fade {

@@ -1,220 +1,174 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-    /* from is the light color, and to is the deep color */
-    :root {
-        --scene-rose-from: #E3635B;
-        --scene-rose-to  : #E45F55;
-        --scene-rose     : linear-gradient(180deg, var(--scene-rose-from) 0%, var(--scene-rose-to) 100%);
-
-        --scene-rose-dark-from: #DC524A;
-        --scene-rose-dark-to  : #DF4F46;
-        --scene-rose-dark     : linear-gradient(180deg, var(--scene-rose-dark-from) 0%, var(--scene-rose-dark-to) 100%);
-
-        --scene-rose-darker-from: #DA473F;
-        --scene-rose-darker-to  : #D4524B;
-        --scene-rose-darker     : linear-gradient(180deg, var(--scene-rose-darker-from) 0%, var(--scene-rose-darker-to) 100%);
-
-        --scene-rose-darkest-from: #D1362F;
-        --scene-rose-darkest-to  : #CE4741;
-        --scene-rose-darkest     : linear-gradient(180deg, var(--scene-rose-darkest-from) 0%, var(--scene-rose-darkest-to) 100%);
-
-        --scene-neutral-from: #E3E3E3;
-        --scene-neutral-to  : #E4E4E4;
-        --scene-neutral     : linear-gradient(180deg, var(--scene-neutral-from) 0%, var(--scene-neutral-to) 100%);
-
-        --scene-neutral-darker-from: #DADADA;
-        --scene-neutral-darker-to  : #D4D4D4;
-        --scene-neutral-darker     : linear-gradient(180deg, var(--scene-neutral-darker-from) 0%, var(--scene-neutral-darker-to) 100%);
-
-        --scene-green-from: #64FB3F;
-        --scene-green-to  : #4FE929;
-        --scene-green     : linear-gradient(180deg, var(--scene-green-from) 0%, var(--scene-green-to) 100%);
-
-        --scene-green-darker-from: #39EB0D;
-        --scene-green-darker-to  : #34DA0B;
-        --scene-green-darker     : linear-gradient(180deg, var(--scene-green-darker-from) 0%, var(--scene-green-darker-to) 100%);
-
-        --scene-red-from: #E53C3C;
-        --scene-red-to  : #DE1D1D;
-        --scene-red     : linear-gradient(180deg, var(--scene-red-from) 0%, var(--scene-red-to) 100%);
-
-        --scene-red-darker-from: #CC0101;
-        --scene-red-darker-to  : #BB0000;
-        --scene-red-darker     : linear-gradient(180deg, var(--scene-red-darker-from) 0%, var(--scene-red-darker-to) 100%);
-
-        --scene-amber-from: #FFF9E8;
-        --scene-amber-to  : #FFF4D6;
-        --scene-amber     : linear-gradient(180deg, var(--scene-amber-from) 0%, var(--scene-amber-to) 100%);
-
-        --scene-blue-from: #618BEC;
-        --scene-blue-to  : #3961DB;
-        --scene-blue     : linear-gradient(180deg, var(--scene-blue-from) 0%, var(--scene-blue-to) 100%);
-
-        --scene-blue-darker-from: #4971E7;
-        --scene-blue-darker-to  : #3961DB;
-        --scene-blue-darker     : linear-gradient(180deg, var(--scene-blue-darker-from) 0%, var(--scene-blue-darker-to) 100%);
-    }
+:root {
+    --scene-rose: #E45F55;
+    --scene-rose-dark: #DF4F46;
+    --scene-rose-darker: #D4524B;
+    --scene-rose-darkest: #CE4741;
+    --scene-neutral: #E4E4E4;
+    --scene-neutral-darker: #D4D4D4;
+    --scene-green: #4FE929;
+    --scene-green-darker: #34DA0B;
+    --scene-red: #DE1D1D;
+    --scene-red-darker: #BB0000;
+    --scene-amber: #FFF4D6;
+    --scene-amber-darker: #BD9A76;
+    --scene-blue: #3961DB;
+    --scene-blue-darker: #3359CC;
 }
 
-@layer components {
-    .bg-scene-rose {
-        background-image: var(--scene-rose);
-    }
+.bg-scene-rose {
+    background-color: var(--scene-rose);
+}
 
-    .bg-scene-rose-dark {
-        background-image: var(--scene-rose-dark);
-    }
+.bg-scene-rose-dark {
+    background-color: var(--scene-rose-dark);
+}
 
-    .bg-scene-rose-darker {
-        background-image: var(--scene-rose-darker);
-    }
+.bg-scene-rose-darker {
+    background-color: var(--scene-rose-darker);
+}
 
-    .bg-scene-rose-darkest {
-        background-image: var(--scene-rose-darkest);
-    }
+.bg-scene-rose-darkest {
+    background-color: var(--scene-rose-darkest);
+}
 
-    .bg-scene-neutral {
-        background-image: var(--scene-neutral);
-    }
+.bg-scene-neutral {
+    background-color: var(--scene-neutral);
+}
 
-    .bg-scene-neutral-darker {
-        background-image: var(--scene-neutral-darker);
-    }
+.bg-scene-neutral-darker {
+    background-color: var(--scene-neutral-darker);
+}
 
-    .bg-scene-green {
-        background-image: var(--scene-green);
-    }
+.bg-scene-green {
+    background-color: var(--scene-green);
+}
 
-    .bg-scene-green-darker {
-        background-image: var(--scene-green-darker);
-    }
+.bg-scene-green-darker {
+    background-color: var(--scene-green-darker);
+}
 
-    .bg-scene-red {
-        background-image: var(--scene-red);
-    }
+.bg-scene-red {
+    background-color: var(--scene-red);
+}
 
-    .bg-scene-red-darker {
-        background-image: var(--scene-red-darker);
-    }
+.bg-scene-red-darker {
+    background-color: var(--scene-red-darker);
+}
 
-    .bg-scene-amber {
-        background-image: var(--scene-amber);
-    }
+.bg-scene-amber {
+    background-color: var(--scene-amber);
+}
 
-    .bg-scene-blue {
-        background-image: var(--scene-blue);
-    }
+.bg-scene-blue {
+    background-color: var(--scene-blue);
+}
 
-    .bg-scene-blue-darker {
-        background-image: var(--scene-blue-darker);
-    }
+.bg-scene-blue-darker {
+    background-color: var(--scene-blue-darker);
+}
 
-    .border-scene-rose {
-        border-color: var(--scene-rose-from);
-    }
+.border-scene-rose {
+    border-color: var(--scene-rose);
+}
 
-    .border-scene-rose-dark {
-        border-color: var(--scene-rose-dark-from);
-    }
+.border-scene-rose-dark {
+    border-color: var(--scene-rose-dark);
+}
 
-    .border-scene-rose-darker {
-        border-color: var(--scene-rose-darker-from);
-    }
+.border-scene-rose-darker {
+    border-color: var(--scene-rose-darker);
+}
 
-    .border-scene-rose-darkest {
-        border-color: var(--scene-rose-darkest-from);
-    }
+.border-scene-rose-darkest {
+    border-color: var(--scene-rose-darkest);
+}
 
-    .border-scene-neutral {
-        border-color: var(--scene-neutral-from);
-    }
+.border-scene-neutral {
+    border-color: var(--scene-neutral);
+}
 
-    .border-scene-neutral-darker {
-        border-color: var(--scene-neutral-darker-from);
-    }
+.border-scene-neutral-darker {
+    border-color: var(--scene-neutral-darker);
+}
 
-    .border-scene-green {
-        border-color: var(--scene-green-from);
-    }
+.border-scene-green {
+    border-color: var(--scene-green);
+}
 
-    .border-scene-green-darker {
-        border-color: var(--scene-green-darker-from);
-    }
+.border-scene-green-darker {
+    border-color: var(--scene-green-darker);
+}
 
-    .border-scene-red {
-        border-color: var(--scene-red-from);
-    }
+.border-scene-red {
+    border-color: var(--scene-red);
+}
 
-    .border-scene-red-darker {
-        border-color: var(--scene-red-darker-from);
-    }
+.border-scene-red-darker {
+    border-color: var(--scene-red-darker);
+}
 
-    .border-scene-amber {
-        border-color: var(--scene-amber-from);
-    }
+.border-scene-amber {
+    border-color: var(--scene-amber);
+}
 
-    .border-scene-blue {
-        border-color: var(--scene-blue-from);
-    }
+.border-scene-blue {
+    border-color: var(--scene-blue);
+}
 
-    .border-scene-blue-darker {
-        border-color: var(--scene-blue-darker-from);
-    }
+.border-scene-blue-darker {
+    border-color: var(--scene-blue-darker);
+}
 
-    .outline-scene-rose {
-        outline-color: var(--scene-rose-from);
-    }
+.outline-scene-rose {
+    outline-color: var(--scene-rose);
+}
 
-    .outline-scene-rose-dark {
-        outline-color: var(--scene-rose-dark-from);
-    }
+.outline-scene-rose-dark {
+    outline-color: var(--scene-rose-dark);
+}
 
-    .outline-scene-rose-darker {
-        outline-color: var(--scene-rose-darker-from);
-    }
+.outline-scene-rose-darker {
+    outline-color: var(--scene-rose-darker);
+}
 
-    .outline-scene-rose-darkest {
-        outline-color: var(--scene-rose-darkest-from);
-    }
+.outline-scene-rose-darkest {
+    outline-color: var(--scene-rose-darkest);
+}
 
-    .outline-scene-neutral {
-        outline-color: var(--scene-neutral-from);
-    }
+.outline-scene-neutral {
+    outline-color: var(--scene-neutral);
+}
 
-    .outline-scene-neutral-darker {
-        outline-color: var(--scene-neutral-darker-from);
-    }
+.outline-scene-neutral-darker {
+    outline-color: var(--scene-neutral-darker);
+}
 
-    .outline-scene-green {
-        outline-color: var(--scene-green-from);
-    }
+.outline-scene-green {
+    outline-color: var(--scene-green);
+}
 
-    .outline-scene-green-darker {
-        outline-color: var(--scene-green-darker-from);
-    }
+.outline-scene-green-darker {
+    outline-color: var(--scene-green-darker);
+}
 
-    .outline-scene-red {
-        outline-color: var(--scene-red-from);
-    }
+.outline-scene-red {
+    outline-color: var(--scene-red);
+}
 
-    .outline-scene-red-darker {
-        outline-color: var(--scene-red-darker-from);
-    }
+.outline-scene-red-darker {
+    outline-color: var(--scene-red-darker);
+}
 
-    .outline-scene-amber {
-        outline-color: var(--scene-amber-from);
-    }
+.outline-scene-amber {
+    outline-color: var(--scene-amber);
+}
 
-    .outline-scene-blue {
-        outline-color: var(--scene-blue-from);
-    }
+.outline-scene-blue {
+    outline-color: var(--scene-blue);
+}
 
-    .outline-scene-blue-darker {
-        outline-color: var(--scene-blue-darker-from);
-    }
+.outline-scene-blue-darker {
+    outline-color: var(--scene-blue-darker);
 }
 
 .scene-icon-btn svg {
@@ -223,48 +177,137 @@
 }
 
 .scene-button {
-    @apply px-6 py-2.5 text-white rounded-lg bg-scene-rose border-2 border-scene-rose-darker hover:shadow-[0_0_8px_#E3635B77] active:bg-scene-rose-dark active:border-scene-rose-darkest focus-visible:outline-[var(--scene-rose-from)] focus-visible:outline-offset-2 focus-visible:outline focus-visible:outline-2;
-    
+    color: white;
+    background-color: var(--scene-rose);
+    border: 1px solid var(--scene-rose);
+    --scene-button-highlight: inset 0 1px 0 rgb(255 255 255 / .1);
+    --scene-button-shadow: 0 0 8px #E3635B88;
+    padding: 0.625rem 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--scene-button-highlight);
+    background-image: linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,0));
     transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, box-shadow;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms;
 }
 
+.scene-button:hover {
+    box-shadow: var(--scene-button-highlight), var(--scene-button-shadow);
+}
+
+.scene-button:active {
+    background-color: var(--scene-rose-darker);
+    border-color: var(--scene-rose-darker);
+}
+
+.scene-button:focus-visible {
+    outline: 2px solid var(--scene-rose);
+    outline-offset: 2px;
+}
+
 .scene-button[disabled] {
-    @apply cursor-not-allowed text-[#878787] bg-scene-neutral border-scene-neutral-darker shadow-none;
+    --scene-button-shadow: #E4E4E488;
+    color: #878787;
+    background-color: var(--scene-neutral);
+    border-color: var(--scene-neutral);
+    cursor: not-allowed;
 }
 
 .scene-button.scene-button-rose {
-    @apply bg-scene-rose border-scene-rose-darker hover:shadow-[0_0_8px_#E3635B88] active:bg-scene-rose-dark active:border-scene-rose-darkest focus-visible:outline-[var(--scene-rose-from)];
+
 }
 
-/*
 .scene-button.scene-button-neutral {
-    @apply bg-scene-neutral border-scene-neutral-darker hover:shadow-[0_0_8px_#E3E3E388] active:bg-scene-neutral-darker active:border-scene-neutral-darker focus-visible:outline-[var(--scene-neutral-from)];
+    color: white;
+    background-color: var(--scene-neutral);
+    border: 1px solid var(--scene-neutral);
+    --scene-button-highlight: inset 0 1px 0 rgb(255 255 255 / .1);
+    --scene-button-shadow: 0 0 8px #E3E3E388;
 }
-*/
+
+.scene-button.scene-button-neutral:active {
+    background-color: var(--scene-neutral-darker);
+    border-color: var(--scene-neutral-darker);
+}
+
+.scene-button.scene-button-neutral:focus-visible {
+    outline-color: var(--scene-neutral);
+}
 
 .scene-button.scene-button-green {
-    @apply bg-scene-green border-scene-green-darker hover:shadow-[0_0_8px_#64FB3F88] active:bg-scene-green-darker active:border-scene-green-darker focus-visible:outline-[var(--scene-green-from)];
+    color: white;
+    background-color: var(--scene-green);
+    border: 1px solid var(--scene-green);
+    --scene-button-highlight: inset 0 1px 0 rgb(255 255 255 / .1);
+    --scene-button-shadow: 0 0 8px #64FB3F88;
+}
+
+.scene-button.scene-button-green:active {
+    background-color: var(--scene-green-darker);
+    border-color: var(--scene-green-darker);
+}
+
+.scene-button.scene-button-green:focus-visible {
+    outline-color: var(--scene-green);
 }
 
 .scene-button.scene-button-red {
-    @apply bg-scene-red border-scene-red-darker hover:shadow-[0_0_8px_#E53C3C88] active:bg-scene-red-darker active:border-scene-red-darker focus-visible:outline-[var(--scene-red-from)];
+    color: white;
+    background-color: var(--scene-red);
+    border: 1px solid var(--scene-red);
+    --scene-button-highlight: inset 0 1px 0 rgb(255 255 255 / .1);
+    --scene-button-shadow: 0 0 8px #E53C3C88;
+}
+
+.scene-button.scene-button-red:active {
+    background-color: var(--scene-red-darker);
+    border-color: var(--scene-red-darker);
+}
+
+.scene-button.scene-button-red:focus-visible {
+    outline-color: var(--scene-red);
 }
 
 .scene-button.scene-button-amber {
-    @apply bg-scene-amber border-scene-amber hover:shadow-[0_0_8px_#FFF9E888] active:bg-scene-amber active:border-scene-amber focus-visible:outline-[var(--scene-amber-from)];
+    color: white;
+    background-color: var(--scene-amber);
+    border: 1px solid var(--scene-amber);
+    --scene-button-highlight: inset 0 1px 0 rgb(255 255 255 / .1);
+    --scene-button-shadow: 0 0 8px #FFF9E888;
+}
+
+.scene-button.scene-button-amber:active {
+    background-color: var(--scene-amber-darker);
+    border-color: var(--scene-amber-darker);
+}
+
+.scene-button.scene-button-amber:focus-visible {
+    outline-color: var(--scene-amber);
 }
 
 .scene-button.scene-button-blue {
-    @apply bg-scene-blue border-scene-blue-darker hover:shadow-[0_0_8px_#618BEC88] active:bg-scene-blue-darker active:border-scene-blue-darker focus-visible:outline-[var(--scene-blue-from)];
+    color: white;
+    background-color: var(--scene-blue);
+    border: 1px solid var(--scene-blue);
+    --scene-button-highlight: inset 0 1px 0 rgb(255 255 255 / .1);
+    --scene-button-shadow: 0 0 8px #618BEC88;
+}
+
+.scene-button.scene-button-blue:active {
+    background-color: var(--scene-blue-darker);
+    border-color: var(--scene-blue-darker);
+}
+
+.scene-button.scene-button-blue:focus-visible {
+    outline-color: var(--scene-blue);
 }
 
 
-
-
 [type="checkbox"].scene-switch {
-    @apply w-10 h-6 rounded-full appearance-none;
+    width: 2.5rem;
+    height: 1.5rem;
+    border-radius: 9999px;
+    appearance: none;
 
     --scene-switch-bg: url("data:image/svg+xml,%3Csvg width='56' height='24' viewBox='0 0 56 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cg clip-path='url(%23c)'%3E %3Crect width='56' height='24' fill='url(%23a)'/%3E %3Crect x='8.5' y='7.5' width='3' height='9' rx='1.5' stroke='%2334DA0B'/%3E %3Cg filter='url(%23b)'%3E %3Ccircle cx='28' cy='12' r='10' fill='white'/%3E %3C/g%3E %3Ccircle cx='46' cy='12' r='3.5' stroke='%23D4D4D4'/%3E %3C/g%3E %3Cdefs%3E %3Cfilter id='b' x='14' y='-2' width='28' height='28' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E %3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E %3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E %3CfeOffset/%3E %3CfeGaussianBlur stdDeviation='2'/%3E %3CfeComposite in2='hardAlpha' operator='out'/%3E %3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0'/%3E %3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow_319_312'/%3E %3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow_319_312' result='shape'/%3E %3C/filter%3E %3ClinearGradient id='a' x1='28' y1='0' x2='28' y2='24' gradientUnits='userSpaceOnUse'%3E %3Cstop stop-color='%23808080' stop-opacity='0'/%3E %3Cstop offset='1' stop-opacity='0.1'/%3E %3C/linearGradient%3E %3CclipPath id='c'%3E %3Crect width='56' height='24' fill='white'/%3E %3C/clipPath%3E %3C/defs%3E %3C/svg%3E ");
 
@@ -272,7 +315,7 @@
     background-size: auto 100%;
     background-position: right center;
     background-repeat: no-repeat;
-    background-color: var(--scene-neutral-from);
+    background-color: var(--scene-neutral);
 
     transition-property: background-color, background-position;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -280,6 +323,25 @@
 }
 
 [type="checkbox"]:checked.scene-switch {
-    background-color: var(--scene-green-from);
+    background-color: var(--scene-green);
     background-position: left center;
+}
+
+.scene-input {
+    padding: 0.5rem 0.75rem;
+    background-color: white;
+    border: 1px solid var(--scene-neutral);
+    border-radius: 0.5rem;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, box-shadow;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+.scene-input:hover {
+    box-shadow: 0 0 8px #E3E3E388;
+}
+
+.scene-input:focus-visible {
+    outline: 2px solid var(--scene-neutral);
+    outline-offset: 2px;
 }
