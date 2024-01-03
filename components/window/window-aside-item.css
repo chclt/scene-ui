@@ -1,8 +1,13 @@
 :host {
+
+}
+
+a {
     padding: 0.5rem 1rem;
     display: flex;
     gap: 0.5rem;
     align-items: center;
+    -webkit-user-drag: none;
 }
 
 :host(:hover),

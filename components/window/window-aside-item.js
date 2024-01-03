@@ -22,12 +22,14 @@ export class SceneWindowAsideItem extends LitElement {
 
     render() {
         return html`
-            <div class="window-aside-item-icon">
-                <slot name="icon"></slot>
-            </div>
-            <span class="window-aside-item-label">
-                <slot></slot>
-            </span>
+            <a href="#" @click="${(e) => { e.preventDefault();} }">
+                <div class="window-aside-item-icon">
+                    <slot name="icon"></slot>
+                </div>
+                <span class="window-aside-item-label">
+                    <slot></slot>
+                </span>
+            </a>
         `;
     }
 

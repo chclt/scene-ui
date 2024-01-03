@@ -19,7 +19,7 @@ export class SceneWindowLink extends LitElement {
 
     render() {
         return html`
-            <slot></slot>
+            <a href="#" @click="${(e) => { e.preventDefault();} }"><slot></slot></a>
         `;
     }
 

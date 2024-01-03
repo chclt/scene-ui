@@ -1,5 +1,8 @@
 :host {
-    display: inline-block;
+    display: inline;
+}
+
+a {
     text-decoration: underline;
-    cursor: pointer;
+    -webkit-user-drag: none;
 }
