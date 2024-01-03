@@ -109,6 +109,7 @@ export class SceneWindow extends LitElement {
     }
 
     backHandler(e) {
+        if (this.path.replace(/(^\/)|(\/$)/g, '').indexOf('/') == -1) return;
         this.path = this.path.substring(0, this.path.lastIndexOf('/'));
     }
 
