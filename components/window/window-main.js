@@ -51,10 +51,10 @@ export class SceneWindowMain extends LitElement {
             }).map((element) => {
                 if (direction == 'forward') {
                     if (element.name == newValue || newValue.indexOf(element.name + '/') == 0) {
-                        console.log(element.name, true);
+                        // console.log(element.name, true);
                         element.classList.remove('hidden');
                     } else {
-                        console.log(element.name, false);
+                        // console.log(element.name, false);
                         element.classList.add('hidden');
                     }
                 }
