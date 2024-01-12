@@ -4,8 +4,15 @@ import { repeat } from 'lit/directives/repeat.js';
 export class SceneLabel extends LitElement {
     static styles = css`
         :host {
-            display: inline;
+            display: inline-block;
             position: relative;
+        }
+
+        .placeholder {
+            color: transparent;
+            transition-property: max-width;
+            transition-duration: 0.3s;
+            transition-function: ease-in-out;
         }
 
         span {
@@ -39,7 +46,8 @@ export class SceneLabel extends LitElement {
 
     static properties = {
         label: { type: String },
-        labelStack: { type: Array, attribute: false }, // [{ src: '', type: '', stackindex: 1 }]
+        placeholder: { type: Array, attribute: false },
+        labelStack: { type: Array, attribute: false },
         labelStackLength: { type: Number, attribute: false },
     };
 
@@ -51,6 +59,8 @@ export class SceneLabel extends LitElement {
 
     connectedCallback() {
         super.connectedCallback();
+
+        this._calculateWidth();
 
         this.shadowRoot.addEventListener('animationend', (event) => {
             this.labelStack.forEach(() => {
@@ -66,26 +76,46 @@ export class SceneLabel extends LitElement {
             label: newValue, 
             stackindex: ++this.labelStackLength
         });
+
+        this.shadowRoot && this._calculateWidth();
+
+        if (oldValue == null || this.labelStack[this.labelStack.length - 1].width >= this.labelStack[this.labelStack.length - 2].width) {
+            this.placeholder = this.labelStack[this.labelStack.length - 1];
+        } else {
+            this.placeholder.width = this.labelStack[this.labelStack.length - 1].width;
+        }
+
+        this.requestUpdate()
+    }
+
+    _calculateWidth() {
         let newSpan = document.createElement('span');
-        newSpan.innerText = newValue;
+        newSpan.innerText = this.labelStack[this.labelStack.length - 1].label;
         this.shadowRoot.appendChild(newSpan);
-        // calc width
         let newWidth = newSpan.offsetWidth;
+        this.labelStack[this.labelStack.length - 1].width = newWidth;
         newSpan.remove();
 
         this.labelStack.forEach(item => {
             let span = this.shadowRoot.querySelector(`span[data-stackindex="${ item.stackindex }"]`);
+            if (!span) return;
             let oldWidth = span.offsetWidth;
             let scale = newWidth / oldWidth;
             item.scaleX = scale;
         })
-        this.requestUpdate()
     }
 
     render() {
-        return repeat(this.labelStack, (item) => item.stackindex, (item, index) =>
-            html`<span data-stackindex="${ item.stackindex }" class="${ item.stackindex == 1 ? 'no-animation' : '' } ${index == this.labelStack.length - 1 ? '' : 'disappear'}" style="transform: scaleX(${ item.scaleX ? item.scaleX : 1 });">${ item.label }</span>` 
-        );
+        return html`
+            <div aria-hidden="true" class="placeholder" style="max-width: ${ this.placeholder ? this.placeholder.width : 0 }px">
+                ${ this.placeholder ? this.placeholder.label : 0 }
+            </div>
+            ${ repeat(this.labelStack, (item) => item.stackindex, (item, index) => html`
+                <span data-stackindex="${ item.stackindex }" class="${ item.stackindex == 1 ? 'no-animation' : '' } ${index == this.labelStack.length - 1 ? '' : 'disappear'}" style="transform: scaleX(${ item.scaleX ? item.scaleX : 1 });">
+                    ${ item.label }
+                </span>` 
+            ) }
+        `;
     }
 
 }
