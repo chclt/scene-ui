@@ -6,13 +6,16 @@ export class SceneLabel extends LitElement {
         :host {
             display: inline-block;
             position: relative;
+            
+            --transition-duration: var(--s-transition-duration, .5s);
+            --blur: var(--s-blur, 8px);
         }
 
         .placeholder {
             color: transparent;
             transition-property: max-width;
-            transition-duration: 0.3s;
-            transition-function: ease-in-out;
+            transition-duration: var(--transition-duration);
+            transition-function: ease-out;
         }
 
         span {
@@ -22,10 +25,11 @@ export class SceneLabel extends LitElement {
             left: 0;
             white-space: nowrap;
             transform-origin: left;
-            transition-duration: 0.3s;
-            transition-function: ease-in-out;
+            transition-duration: var(--transition-duration);
+            transition-function: ease-out;
             transition-property: transform, opacity, filter;
-            animation: appear 0.5s ease-in-out;
+            animation: appear var(--transition-duration) ease-out;
+
         }
 
         .no-animation {
@@ -34,13 +38,13 @@ export class SceneLabel extends LitElement {
 
         .disappear {
             opacity: 0;
-            filter: blur(2px)
+            filter: blur(var(--blur));
+            transform: scaleX(var(--scale-x));
         }
 
         @keyframes appear {
-            from { opacity: 0; filter: blur(2px); }
-            30%  { opacity: 0; filter: blur(2px); }
-            to { opacity: 1; filter: blur(0px); }
+            from { opacity: 0; filter: blur(var(--blur)); transform: scaleX(var(--scale-x-r));}
+            to { opacity: 1; filter: blur(0px); transform: scaleX(1);}
         }
     `;
 
@@ -85,7 +89,7 @@ export class SceneLabel extends LitElement {
             this.placeholder.width = this.labelStack[this.labelStack.length - 1].width;
         }
 
-        this.requestUpdate()
+        this.requestUpdate();
     }
 
     _calculateWidth() {
@@ -96,12 +100,16 @@ export class SceneLabel extends LitElement {
         this.labelStack[this.labelStack.length - 1].width = newWidth;
         newSpan.remove();
 
-        this.labelStack.forEach(item => {
+        this.labelStack.forEach((item, index) => {
             let span = this.shadowRoot.querySelector(`span[data-stackindex="${ item.stackindex }"]`);
-            if (!span) return;
-            let oldWidth = span.offsetWidth;
-            let scale = newWidth / oldWidth;
-            item.scaleX = scale;
+            let oldWidth;
+            if (this.labelStackLength > 1 && index == this.labelStack.length - 1) {
+                item.scaleX_r = this.labelStack[index - 1].width / item.width;
+            } else {
+                if (!span) return;
+                oldWidth = span.offsetWidth;
+                item.scaleX = newWidth / oldWidth;
+            }
         })
     }
 
@@ -110,11 +118,16 @@ export class SceneLabel extends LitElement {
             <div aria-hidden="true" class="placeholder" style="max-width: ${ this.placeholder ? this.placeholder.width : 0 }px">
                 ${ this.placeholder ? this.placeholder.label : 0 }
             </div>
-            ${ repeat(this.labelStack, (item) => item.stackindex, (item, index) => html`
-                <span data-stackindex="${ item.stackindex }" class="${ item.stackindex == 1 ? 'no-animation' : '' } ${index == this.labelStack.length - 1 ? '' : 'disappear'}" style="transform: scaleX(${ item.scaleX ? item.scaleX : 1 });">
-                    ${ item.label }
-                </span>` 
-            ) }
+            ${ repeat(this.labelStack, (item) => item.stackindex, (item, index) => { 
+                return html`
+                    <span data-stackindex="${ item.stackindex }" 
+                    class="${ item.stackindex == 1 ? 'no-animation' : '' } ${ this.labelStack.length > 1 && index != this.labelStack.length - 1 ? 'disappear' : '' }" 
+                    style="--scale-x: ${ item.scaleX }; --scale-x-r: ${ item.scaleX_r };"
+                    >
+                        ${ item.label }
+                    </span>
+                `; 
+            })}
         `;
     }
 
