@@ -205,14 +205,6 @@
     outline-offset: 2px;
 }
 
-.scene-button[disabled] {
-    --scene-button-shadow: #E4E4E488;
-    color: #878787;
-    background-color: var(--scene-neutral);
-    border-color: var(--scene-neutral);
-    cursor: not-allowed;
-}
-
 .scene-button.scene-button-rose {
 
 }
@@ -302,6 +294,18 @@
     outline-color: var(--scene-blue);
 }
 
+.scene-button[disabled] {
+    --scene-button-shadow: #E4E4E488;
+    color: #878787;
+    background-color: var(--scene-neutral);
+    border-color: var(--scene-neutral);
+    cursor: not-allowed;
+}
+
+.scene-button[disabled]:active {
+    background-color: var(--scene-neutral);
+    border-color: var(--scene-neutral);
+}
 
 [type="checkbox"].scene-switch {
     width: 2.5rem;
